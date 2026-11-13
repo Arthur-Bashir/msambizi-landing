@@ -21,10 +21,10 @@
       </button>
 
       <nav id="primary-navigation" class="primary-navigation" :class="{ 'is-open': open }" aria-label="Main navigation">
-        <a href="#opportunity" @click="navigateToSection('opportunity')">The opportunity</a>
-        <a href="#how-it-works" @click="navigateToSection('how-it-works')">How it works</a>
-        <a href="#institutions" @click="navigateToSection('institutions')">For institutions</a>
-        <a href="#engagement" @click="navigateToSection('engagement')">Adoption</a>
+        <a href="#learning-story" @click="navigateToSection('learning-story')">The learning story</a>
+        <a href="#proposition" @click="navigateToSection('proposition')">Our approach</a>
+        <a href="#institutional-trust" @click="navigateToSection('institutional-trust')">For institutions</a>
+        <a href="#institutional-engagement" @click="navigateToSection('institutional-engagement')">Engagement</a>
         <ThemeToggle />
         <a class="button-primary header-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation" @click="closeMenu(true)">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
       </nav>

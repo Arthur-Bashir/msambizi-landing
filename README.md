@@ -25,8 +25,8 @@ Output: `.output/public` — deploy to any static host or to the domain root.
 - The public copy is adapted from Msambizi's current website for a university and college audience; school and tutor messaging is intentionally excluded.
 - The current brand palette, Inter typography, and official Msambizi wordmark variants are used with the CSS-built architectural artwork.
 - `/login` is an informational workspace-access placeholder; authentication is not implemented.
-- The homepage explains the approved institutional learning proposition and presents institutional engagement steps as proposed, not automated services.
-- Product screenshots and detailed workflow documentation are not present in this repository; the “How it works” section explicitly reserves space for approved product evidence.
+- The homepage uses five sections to communicate the institutional learning proposition and a proposed engagement journey.
+- Product screenshots and detailed workflow documentation are not present in this repository; the platform is explained with conceptual diagrams rather than fabricated application screens.
 - Presentation/contact links use the existing `support@msambizi.school` mailbox; confirm mailbox ownership and deliverability before launch.
 - The homepage uses original CSS-built architectural artwork and local logo assets. It does not use product screenshots or photography.
 - Privacy, terms, and security destinations are omitted until real policy pages are available.
