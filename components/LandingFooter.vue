@@ -2,10 +2,9 @@
   <footer class="site-footer">
     <div class="page-container footer-main">
       <a href="#top" class="brand-lockup" aria-label="Msambizi home">
-        <span class="brand-symbol" aria-hidden="true">M</span>
-        <span class="brand-name">msambizi<span>.</span></span>
+        <img class="brand-logo" src="/brand/msambizi-logo-on-dark.webp" alt="Msambizi — Ask, Learn, Excel" width="445" height="176" />
       </a>
-      <p>For universities and colleges shaping the future of higher education.</p>
+      <p>Ask. Learn. Excel. With educators guiding the way.</p>
       <nav aria-label="Footer navigation">
         <a href="#vision">Our vision</a>
         <a href="#institutions">For institutions</a>
