@@ -3,10 +3,10 @@
     <div class="page-container engage-layout">
       <div>
         <p class="eyebrow"><span class="eyebrow-rule" /> The next step</p>
-        <h2>Bring your institution’s questions into <em>the conversation.</em></h2>
+        <h2>Explore what Msambizi could mean for <em>your institution.</em></h2>
       </div>
       <div class="engage-action">
-        <p>Request a presentation to explore educator-guided learning and share the priorities of your university or college.</p>
+        <p>Discuss your institution’s priorities, see a product demonstration and consider an evaluation and adoption scope with the Msambizi team.</p>
         <a class="button-light" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation">
           Request an institutional presentation <ArrowRight :size="17" aria-hidden="true" />
         </a>

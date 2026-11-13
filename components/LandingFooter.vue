@@ -7,8 +7,9 @@
       </a>
       <p>Ask. Learn. Excel. With educators guiding the way.</p>
       <nav aria-label="Footer navigation">
-        <a href="#vision">Our vision</a>
+        <a href="#how-it-works">How it works</a>
         <a href="#institutions">For institutions</a>
+        <a href="#engage">Institutional engagement</a>
         <a href="mailto:support@msambizi.school?subject=Engage%20with%20the%20Msambizi%20team">Contact Msambizi</a>
       </nav>
     </div>
