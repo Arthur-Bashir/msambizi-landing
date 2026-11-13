@@ -3,17 +3,17 @@
     <div class="page-container hero-layout">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-rule" /> Educator-guided learning</p>
-        <h1>Every learner deserves faculty guidance, <em>even after class.</em></h1>
+        <h1>Extend the reach of educators. <em>Strengthen the learning experience.</em></h1>
         <p class="hero-intro">
-          Msambizi brings an educator-guided AI learning experience to universities and colleges, grounded in approved course materials and available when students need support.
+          Msambizi offers universities and colleges an educator-guided AI learning experience, grounded in approved course materials, to extend academic support beyond the classroom.
         </p>
         <div class="hero-actions">
           <a class="button-primary" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation">
             Request an institutional presentation <ArrowRight :size="17" aria-hidden="true" />
           </a>
-          <a class="text-link" href="#vision">Discover Msambizi <ArrowDown :size="16" aria-hidden="true" /></a>
+          <a class="text-link" href="#vision">Discover the vision <ArrowDown :size="16" aria-hidden="true" /></a>
         </div>
-        <p class="hero-note">For university and college leadership, faculty, administrators and academic communities.</p>
+        <p class="hero-note">For university and college leaders, academic teams, lecturers and institutional ICT decision-makers.</p>
       </div>
 
       <div class="hero-art" aria-hidden="true">
