@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://msambizi.africa/' },
       ],
       link: [
-        { rel: 'canonical', href: 'https://msambizi.africa/' },
+        { rel: 'canonical', href: 'https://msambizi.africa/', key: 'canonical' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap' },
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/', '/login'],
     },
   },
   css: ['~/assets/css/main.css'],

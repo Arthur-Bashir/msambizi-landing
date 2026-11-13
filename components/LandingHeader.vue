@@ -3,7 +3,8 @@
   <header class="site-header">
     <div ref="headerElement" class="page-container header-inner">
       <a href="#top" class="brand-lockup" aria-label="Msambizi home">
-        <img class="brand-logo" src="/brand/msambizi-logo-on-dark.webp" alt="Msambizi — Ask, Learn, Excel" width="445" height="176" />
+        <img class="brand-logo brand-logo--dark" src="/brand/msambizi-logo-on-dark.webp" alt="Msambizi — Ask, Learn, Excel" width="445" height="176" />
+        <img class="brand-logo brand-logo--light" src="/brand/msambizi-logo-on-light.webp" alt="Msambizi — Ask, Learn, Excel" width="453" height="176" />
       </a>
 
       <button
@@ -23,7 +24,8 @@
         <a href="#vision" @click="navigateToSection('vision')">Our vision</a>
         <a href="#institutions" @click="navigateToSection('institutions')">For institutions</a>
         <a href="#engage" @click="navigateToSection('engage')">Engage with us</a>
-        <a class="portal-link" href="https://msambizi.africa/login" @click="closeMenu(true)">Portal sign in <ArrowUpRight :size="15" aria-hidden="true" /></a>
+        <ThemeToggle />
+        <a class="portal-link" href="/login" @click="closeMenu(true)">Portal sign in <ArrowUpRight :size="15" aria-hidden="true" /></a>
         <a class="button-primary header-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation" @click="closeMenu(true)">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
       </nav>
     </div>

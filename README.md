@@ -24,7 +24,8 @@ Output: `.output/public` — deploy to any static host or to the domain root.
 - No application screenshots, product modules, detailed workflows, partnerships, statistics, or pricing claims are included.
 - The public copy is adapted from Msambizi's current website for a university and college audience; school and tutor messaging is intentionally excluded.
 - The current brand palette, Inter typography, and official Msambizi wordmark variants are used with the CSS-built architectural artwork.
-- The sign-in link points to the verified `https://msambizi.africa/login` page.
+- Header and footer sign-in links open the locally designed `/login` page.
+- The repository has no authentication service; the login form is a presentation-only screen and does not send or store credentials.
 - Presentation/contact links use the existing `support@msambizi.school` mailbox; confirm mailbox ownership and deliverability before launch.
 - The homepage uses original CSS-built architectural artwork and local logo assets. It does not use product screenshots or photography.
 - Privacy, terms, and security destinations are omitted until real policy pages are available.
