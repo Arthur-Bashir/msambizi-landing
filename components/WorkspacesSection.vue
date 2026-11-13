@@ -1,5 +1,5 @@
 <template>
-  <section id="institutions" class="institutions-section">
+  <section id="institutions" class="institutions-section" tabindex="-1">
     <div class="page-container">
       <div class="institutions-heading">
         <div>

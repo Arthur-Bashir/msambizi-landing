@@ -1,10 +1,10 @@
 <template>
-  <main>
-    <LandingHeader />
+  <LandingHeader />
+  <main id="main-content" tabindex="-1">
     <LandingHero />
     <VisionSection />
     <WorkspacesSection />
     <FinalCtaSection />
-    <LandingFooter />
   </main>
+  <LandingFooter />
 </template>

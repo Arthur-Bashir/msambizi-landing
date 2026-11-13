@@ -1,5 +1,5 @@
 <template>
-  <section id="engage" class="engage-section">
+  <section id="engage" class="engage-section" tabindex="-1">
     <div class="page-container engage-layout">
       <div>
         <p class="eyebrow"><span class="eyebrow-rule" /> The next step</p>

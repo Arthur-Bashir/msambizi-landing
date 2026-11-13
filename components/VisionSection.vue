@@ -1,5 +1,5 @@
 <template>
-  <section id="vision" class="vision-section">
+  <section id="vision" class="vision-section" tabindex="-1">
     <div class="page-container vision-layout">
       <div class="vision-index"><span>01</span><i /></div>
       <div class="vision-heading">

@@ -9,7 +9,7 @@
         <a href="#vision">Our vision</a>
         <a href="#institutions">For institutions</a>
         <a href="mailto:support@msambizi.school?subject=Engage%20with%20the%20Msambizi%20team">Contact Msambizi</a>
-        <a href="https://app.msambizi.school/login">Portal sign in <ArrowUpRight :size="13" aria-hidden="true" /></a>
+        <a href="https://msambizi.africa/login">Portal sign in <ArrowUpRight :size="13" aria-hidden="true" /></a>
       </nav>
     </div>
     <div class="page-container footer-bottom"><span>© {{ year }} Msambizi</span><span>Institutional technology for higher education</span></div>
