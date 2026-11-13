@@ -3,7 +3,7 @@
     <div class="page-container">
       <div class="trust-heading">
         <p class="eyebrow"><span class="eyebrow-rule" /> For universities and colleges</p>
-        <h2>Academic purpose. <em>Institutional trust.</em></h2>
+        <h2>Academic purpose. <em>Institutional priorities.</em></h2>
       </div>
       <div class="trust-themes">
         <article class="trust-theme">

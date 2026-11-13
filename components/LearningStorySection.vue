@@ -36,12 +36,13 @@
           <span class="story-moment-index">03</span>
           <div class="story-illustration" aria-hidden="true">
             <svg viewBox="0 0 64 64" fill="none">
-              <circle cx="32" cy="18" r="8" />
-              <path d="M17 51c1-11 6-17 15-17s14 6 15 17H17Zm-8-28h8m30 0h8M32 2v7M14 9l6 6m30-6-6 6" />
+              <rect x="9" y="11" width="46" height="32" rx="3" />
+              <path d="M4 51h56l-5-8H9l-5 8Zm14-26h18m-18 7h27" />
+              <circle cx="46" cy="24" r="2" />
             </svg>
           </div>
-          <h3>Guidance beyond class</h3>
-          <p>Educator-guided AI learning supports the wider experience.</p>
+          <h3>Msambizi-guided learning</h3>
+          <p>Educator-guided AI supports the wider learning experience.</p>
         </article>
       </div>
     </div>

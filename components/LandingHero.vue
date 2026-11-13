@@ -15,21 +15,7 @@
         </div>
       </div>
 
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-arc art-arc-outer" />
-        <div class="art-arc art-arc-inner" />
-        <div class="art-sun" />
-        <div class="art-ground" />
-        <div class="art-building">
-          <div class="building-roof" />
-          <div class="building-entablature" />
-          <div class="building-columns"><i /><i /><i /><i /><i /></div>
-          <div class="building-steps"><i /><i /><i /></div>
-        </div>
-        <div class="art-orbit orbit-a" /><div class="art-orbit orbit-b" />
-        <div class="art-caption"><span>01</span><span>Help beyond<br />the lecture.</span></div>
-        <div class="art-side-note">EDUCATOR-GUIDED <span>✳</span></div>
-      </div>
+      <ProductShowcase />
 
       <div class="hero-baseline"><span>MSAMBIZI</span><span>ASK · LEARN · EXCEL</span><span>UNIVERSITIES · COLLEGES</span></div>
     </div>
