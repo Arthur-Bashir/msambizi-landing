@@ -25,7 +25,6 @@
         <a href="#institutions" @click="navigateToSection('institutions')">For institutions</a>
         <a href="#engage" @click="navigateToSection('engage')">Engage with us</a>
         <ThemeToggle />
-        <a class="portal-link" href="/login" @click="closeMenu(true)">Portal sign in <ArrowUpRight :size="15" aria-hidden="true" /></a>
         <a class="button-primary header-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation" @click="closeMenu(true)">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
       </nav>
     </div>
@@ -34,7 +33,7 @@
 
 <script setup lang="ts">
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
-import { ArrowRight, ArrowUpRight, Menu, X } from 'lucide-vue-next'
+import { ArrowRight, Menu, X } from 'lucide-vue-next'
 
 const open = ref(false)
 const headerElement = ref<HTMLElement | null>(null)

@@ -1,6 +1,6 @@
 <template>
   <div class="login-page">
-    <a class="skip-link" href="#login-main">Skip to sign-in form</a>
+    <a class="skip-link" href="#workspace-main">Skip to workspace information</a>
     <header class="login-topbar page-container">
       <a href="/" class="brand-lockup" aria-label="Msambizi home">
         <img class="brand-logo brand-logo--dark" src="/brand/msambizi-logo-on-dark.webp" alt="Msambizi — Ask, Learn, Excel" width="445" height="176" />
@@ -8,16 +8,16 @@
       </a>
       <div class="login-top-actions">
         <ThemeToggle />
-        <a class="login-home-link" href="/">Back to home <ArrowUpRight :size="15" aria-hidden="true" /></a>
+        <a class="login-home-link" href="/"><ArrowLeft :size="15" aria-hidden="true" /> Back to homepage</a>
       </div>
     </header>
 
-    <main id="login-main" class="login-layout page-container" tabindex="-1">
-      <section class="login-story" aria-labelledby="login-story-heading">
+    <main id="workspace-main" class="login-layout page-container" tabindex="-1">
+      <section class="login-story" aria-labelledby="workspace-story-heading">
         <div class="login-story-copy">
           <p class="eyebrow"><span class="eyebrow-rule" /> Learning in higher education</p>
-          <h1 id="login-story-heading">Faculty guidance, <em>even after class.</em></h1>
-          <p>Continue to your Msambizi workspace.</p>
+          <h1 id="workspace-story-heading">Extend the reach of educators. <em>Strengthen learning.</em></h1>
+          <p>Msambizi brings educator-guided learning to universities and colleges.</p>
         </div>
         <div class="login-art" aria-hidden="true">
           <div class="login-art-ring login-art-ring--outer" />
@@ -31,57 +31,39 @@
         <p class="login-story-footer">ASK <i /> LEARN <i /> EXCEL</p>
       </section>
 
-      <section class="login-card" aria-labelledby="login-heading">
+      <section class="login-card access-card" aria-labelledby="workspace-heading">
         <div class="login-card-mark" aria-hidden="true"><GraduationCap :size="23" /></div>
-        <p class="login-card-eyebrow">Msambizi workspace</p>
-        <h2 id="login-heading">Welcome back</h2>
-        <p class="login-card-intro">Sign in to continue to your Msambizi workspace.</p>
-
-        <form class="login-form" @submit.prevent="showUnavailableMessage = true">
-          <label for="login-email">Email address</label>
-          <input id="login-email" v-model="email" type="email" name="email" autocomplete="username" placeholder="name@example.com" required />
-
-          <div class="login-password-label">
-            <label for="login-password">Password</label>
-            <a :href="passwordHelpLink">Forgot password?</a>
-          </div>
-          <div class="login-password-input">
-            <input id="login-password" v-model="password" :type="showPassword ? 'text' : 'password'" name="password" autocomplete="current-password" placeholder="Enter your password" required />
-            <button type="button" class="password-visibility" :aria-label="showPassword ? 'Hide password' : 'Show password'" :aria-pressed="showPassword" @click="showPassword = !showPassword">
-              <EyeOff v-if="showPassword" :size="17" aria-hidden="true" />
-              <Eye v-else :size="17" aria-hidden="true" />
-            </button>
-          </div>
-
-          <p v-if="showUnavailableMessage" class="login-status" role="status">
-            Sign-in is not connected on this website yet. Your details were not sent. Please contact the Msambizi team for assistance.
-          </p>
-
-          <button class="button-primary login-submit" type="submit">Sign in <ArrowRight :size="17" aria-hidden="true" /></button>
-        </form>
-
-        <p class="login-signup">New to Msambizi? <a :href="demoLink">Request an institutional presentation</a></p>
+        <p class="login-card-eyebrow">Institutional platform</p>
+        <h2 id="workspace-heading">Workspace access is coming.</h2>
+        <p class="login-card-intro">Workspace access will be made available when the institutional platform is ready.</p>
+        <p class="access-contact-copy">For questions from a university or college, contact the Msambizi team.</p>
+        <div class="access-actions">
+          <a class="button-primary access-contact" href="mailto:support@msambizi.school?subject=Msambizi%20workspace%20access">
+            Contact the Msambizi team <ArrowRight :size="17" aria-hidden="true" />
+          </a>
+          <a class="text-link" href="/">Return to homepage <ArrowLeft :size="15" aria-hidden="true" /></a>
+        </div>
       </section>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { ArrowRight, ArrowUpRight, Eye, EyeOff, GraduationCap } from 'lucide-vue-next'
+import { ArrowLeft, ArrowRight, GraduationCap } from 'lucide-vue-next'
 
-const email = ref('')
-const password = ref('')
-const showPassword = ref(false)
-const showUnavailableMessage = ref(false)
-const passwordHelpLink = 'mailto:support@msambizi.school?subject=Password%20assistance'
-const demoLink = 'mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation'
+const description = 'Educator-guided AI learning for universities and colleges, grounded in approved course materials. Extend the reach of educators. Strengthen the learning experience.'
+const socialTitle = 'Msambizi — Extend the Reach of Educators'
+const socialDescription = 'Strengthen the learning experience through educator-guided AI learning for universities and colleges, grounded in approved course materials.'
 
 useHead({
-  title: 'Sign in | Msambizi',
+  title: 'Institutional workspace | Msambizi',
   meta: [
-    { name: 'description', content: 'Sign in to continue to your Msambizi workspace.' },
+    { name: 'description', content: description },
+    { property: 'og:title', content: socialTitle },
+    { property: 'og:description', content: socialDescription },
     { property: 'og:url', content: 'https://msambizi.africa/login' },
+    { name: 'twitter:title', content: socialTitle },
+    { name: 'twitter:description', content: socialDescription },
   ],
   link: [{ rel: 'canonical', href: 'https://msambizi.africa/login', key: 'canonical' }],
 })

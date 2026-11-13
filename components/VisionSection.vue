@@ -4,11 +4,11 @@
       <div class="vision-index"><span>01</span><i /></div>
       <div class="vision-heading">
         <p class="eyebrow">The Msambizi vision</p>
-        <h2>Academic guidance should reach beyond class.</h2>
+        <h2>Academic guidance should extend beyond the classroom.</h2>
       </div>
       <div class="vision-copy">
-        <p>Students’ learning continues outside scheduled teaching. Msambizi is built around the idea that academic support can continue to reflect what educators teach.</p>
-        <p>Faculty knowledge and academic purpose stay central, with technology supporting the learning experience and educators remaining part of it.</p>
+        <p>Students need academic support beyond scheduled teaching. Technology can extend the reach of educators and the guidance they provide.</p>
+        <p>Educators remain central to the learning experience; technology supports their work rather than replacing them.</p>
         <a class="text-link" href="#engage">Discuss the vision <ArrowRight :size="16" aria-hidden="true" /></a>
       </div>
     </div>
