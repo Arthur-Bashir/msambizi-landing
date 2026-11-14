@@ -1,5 +1,5 @@
 <template>
-  <figure class="product-showcase" role="img" aria-label="Conceptual illustration of educator-guided learning across devices. This is not a live product screen.">
+  <figure class="product-showcase" role="img" aria-label="Conceptual illustration of educator-guided learning across devices. This is not a live product screen." data-reveal @pointermove="handlePointerMove" @pointerleave="resetPointer">
     <div class="showcase-halo" aria-hidden="true" />
     <div class="showcase-float-label showcase-float-label--guided" aria-hidden="true">
       <span class="showcase-label-mark">✳</span>
@@ -48,3 +48,19 @@
     <figcaption class="showcase-caption"><span />Conceptual representation · not a live product screen</figcaption>
   </figure>
 </template>
+
+<script setup lang="ts">
+function handlePointerMove(event: PointerEvent) {
+  if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  const element = event.currentTarget as HTMLElement
+  const bounds = element.getBoundingClientRect()
+  element.style.setProperty('--pointer-x', String(((event.clientX - bounds.left) / bounds.width - 0.5) * 2))
+  element.style.setProperty('--pointer-y', String(((event.clientY - bounds.top) / bounds.height - 0.5) * 2))
+}
+
+function resetPointer(event: PointerEvent) {
+  const element = event.currentTarget as HTMLElement
+  element.style.setProperty('--pointer-x', '0')
+  element.style.setProperty('--pointer-y', '0')
+}
+</script>

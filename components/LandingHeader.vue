@@ -21,10 +21,10 @@
       </button>
 
       <nav id="primary-navigation" ref="navigationElement" class="primary-navigation" :class="{ 'is-open': open }" aria-label="Main navigation">
-        <a href="#learning-story" @click="navigateToSection('learning-story')">The learning story</a>
-        <a href="#proposition" @click="navigateToSection('proposition')">Our approach</a>
-        <a href="#institutional-trust" @click="navigateToSection('institutional-trust')">For institutions</a>
-        <a href="#institutional-engagement" @click="navigateToSection('institutional-engagement')">Engagement</a>
+        <a href="#learning-story" :aria-current="activeSection === 'learning-story' ? 'location' : undefined" @click="navigateToSection('learning-story')">The learning story</a>
+        <a href="#proposition" :aria-current="activeSection === 'proposition' ? 'location' : undefined" @click="navigateToSection('proposition')">Our approach</a>
+        <a href="#institutional-trust" :aria-current="activeSection === 'institutional-trust' ? 'location' : undefined" @click="navigateToSection('institutional-trust')">For institutions</a>
+        <a href="#institutional-engagement" :aria-current="activeSection === 'institutional-engagement' ? 'location' : undefined" @click="navigateToSection('institutional-engagement')">Engagement</a>
         <ThemeToggle />
         <a class="button-primary header-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation" @click="closeMenu(true)">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
       </nav>
@@ -37,9 +37,11 @@ import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { ArrowRight, Menu, X } from 'lucide-vue-next'
 
 const open = ref(false)
+const activeSection = ref('')
 const headerElement = ref<HTMLElement | null>(null)
 const menuButton = ref<HTMLButtonElement | null>(null)
 const navigationElement = ref<HTMLElement | null>(null)
+let sectionObserver: IntersectionObserver | undefined
 
 function closeMenu(returnFocus = false) {
   open.value = false
@@ -83,10 +85,18 @@ function handlePointerdown(event: PointerEvent) {
 onMounted(() => {
   window.addEventListener('keydown', handleKeydown)
   window.addEventListener('pointerdown', handlePointerdown)
+  if ('IntersectionObserver' in window) {
+    sectionObserver = new IntersectionObserver((entries) => {
+      const current = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
+      if (current?.target.id) activeSection.value = current.target.id
+    }, { rootMargin: '-18% 0px -68% 0px' })
+    document.querySelectorAll<HTMLElement>('#learning-story, #proposition, #institutional-trust, #institutional-engagement').forEach((section) => sectionObserver?.observe(section))
+  }
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handleKeydown)
   window.removeEventListener('pointerdown', handlePointerdown)
+  sectionObserver?.disconnect()
 })
 </script>
