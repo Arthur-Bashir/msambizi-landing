@@ -51,9 +51,9 @@
 <script setup lang="ts">
 import { ArrowLeft, ArrowRight, GraduationCap } from 'lucide-vue-next'
 
-const description = 'Educator-guided AI learning for universities and colleges, grounded in approved course materials. Extend the reach of educators. Strengthen the learning experience.'
+const description = 'A learning platform for universities and colleges, grounded in approved course materials and guided by educators. AI supports the learning experience.'
 const socialTitle = 'Msambizi — Extend the Reach of Educators'
-const socialDescription = 'Strengthen the learning experience through educator-guided AI learning for universities and colleges, grounded in approved course materials.'
+const socialDescription = 'A university and college learning platform grounded in approved materials and guided by educators, with AI supporting the learning experience.'
 
 useHead({
   title: 'Institutional workspace | Msambizi',

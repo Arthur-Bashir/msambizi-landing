@@ -2,10 +2,10 @@
   <section id="top" class="hero-section">
     <div class="page-container hero-layout">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-rule" /> AI learning for higher education</p>
+        <p class="eyebrow"><span class="eyebrow-rule" /> Institutional learning for universities and colleges</p>
         <h1>Extend the reach of educators. <em>Strengthen the learning experience.</em></h1>
         <p class="hero-intro">
-          An institutionally licensed AI learning platform for universities and colleges, grounded in approved academic materials.
+          An institutionally licensed learning platform shaped by educators and grounded in materials approved for academic use.
         </p>
         <div class="hero-actions">
           <a class="button-primary" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation">

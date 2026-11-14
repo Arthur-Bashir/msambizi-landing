@@ -24,8 +24,8 @@
           <div class="trust-theme-illustration" aria-hidden="true">
             <svg viewBox="0 0 56 56" fill="none"><path d="M28 9v37M16 15h24M13 15l-8 17h16L13 15Zm30 0-8 17h16l-8-17ZM20 46h16" /><path d="M7 32c1 5 11 5 12 0m22 0c1 5 11 5 12 0" /></svg>
           </div>
-          <h3>Responsible use of AI</h3>
-          <p>Clarify expectations and institutional requirements before adoption.</p>
+          <h3>AI in service of learning</h3>
+          <p>AI should serve academic purpose and align with institutional expectations.</p>
         </article>
       </div>
       <p class="trust-note">Specific privacy, security and compliance requirements should be confirmed directly with Msambizi during institutional evaluation.</p>

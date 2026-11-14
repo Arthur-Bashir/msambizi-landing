@@ -20,7 +20,7 @@
         <Menu v-else :size="20" aria-hidden="true" />
       </button>
 
-      <nav id="primary-navigation" class="primary-navigation" :class="{ 'is-open': open }" aria-label="Main navigation">
+      <nav id="primary-navigation" ref="navigationElement" class="primary-navigation" :class="{ 'is-open': open }" aria-label="Main navigation">
         <a href="#learning-story" @click="navigateToSection('learning-story')">The learning story</a>
         <a href="#proposition" @click="navigateToSection('proposition')">Our approach</a>
         <a href="#institutional-trust" @click="navigateToSection('institutional-trust')">For institutions</a>
@@ -39,6 +39,7 @@ import { ArrowRight, Menu, X } from 'lucide-vue-next'
 const open = ref(false)
 const headerElement = ref<HTMLElement | null>(null)
 const menuButton = ref<HTMLButtonElement | null>(null)
+const navigationElement = ref<HTMLElement | null>(null)
 
 function closeMenu(returnFocus = false) {
   open.value = false
@@ -47,7 +48,10 @@ function closeMenu(returnFocus = false) {
 
 function toggleMenu() {
   if (open.value) closeMenu()
-  else open.value = true
+  else {
+    open.value = true
+    void nextTick(() => navigationElement.value?.querySelector<HTMLElement>('a, button')?.focus())
+  }
 }
 
 function navigateToSection(id: string) {
@@ -57,6 +61,19 @@ function navigateToSection(id: string) {
 
 function handleKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape' && open.value) closeMenu(true)
+  if (event.key !== 'Tab' || !open.value || !navigationElement.value) return
+
+  const focusable = Array.from(navigationElement.value.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'))
+  const first = focusable[0]
+  const last = focusable.at(-1)
+  if (!first || !last) return
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault()
+    last.focus()
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault()
+    first.focus()
+  }
 }
 
 function handlePointerdown(event: PointerEvent) {

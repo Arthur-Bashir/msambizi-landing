@@ -3,8 +3,8 @@
     <div class="page-container">
       <div class="proposition-heading">
         <p class="eyebrow"><span class="eyebrow-rule" /> The Msambizi proposition</p>
-        <h2>Four parts of <em>one learning relationship.</em></h2>
-        <p>An institutionally licensed platform shaped around approved materials, AI-supported learning, educators and students.</p>
+        <h2>Four parts of <em>one academic relationship.</em></h2>
+        <p>Institutions set the academic context; educators guide learning, and AI supports students as they engage with approved materials.</p>
       </div>
 
       <div class="proposition-map" role="group" aria-label="Conceptual relationship between academic materials, educators, AI-supported learning and students">
@@ -18,7 +18,7 @@
         </article>
         <div class="proposition-core">
           <span class="proposition-core-mark">M</span>
-          <strong>Educator-guided<br />AI learning</strong>
+          <strong>Learning guided<br />by educators</strong>
           <span class="proposition-core-name">MSAMBIZI</span>
         </div>
         <article class="proposition-node proposition-node--learning">

@@ -1,42 +1,33 @@
 <template>
-  <figure
-    class="product-showcase"
-    role="img"
-    aria-label="Illustrative Msambizi concept for educator-guided academic learning, shown on a laptop and phone. It is not a live product screenshot."
-  >
+  <figure class="product-showcase" role="img" aria-label="Conceptual illustration of educator-guided learning across devices. This is not a live product screen.">
     <div class="showcase-halo" aria-hidden="true" />
     <div class="showcase-float-label showcase-float-label--guided" aria-hidden="true">
       <span class="showcase-label-mark">✳</span>
-      <span><strong>Educator-guided</strong><small>Learning context</small></span>
+      <span><strong>Educator-guided</strong><small>Learning shaped by people</small></span>
     </div>
     <div class="showcase-float-label showcase-float-label--materials" aria-hidden="true">
-      <span class="showcase-label-mark showcase-label-mark--book"><BookOpen :size="15" /></span>
-      <span><strong>Academic learning</strong><small>Illustrative concept</small></span>
+      <span class="showcase-label-mark showcase-label-mark--book">◌</span>
+      <span><strong>Academic learning</strong><small>Grounded in approved materials</small></span>
     </div>
 
     <div class="showcase-laptop" aria-hidden="true">
       <div class="showcase-laptop-screen">
-        <div class="showcase-app-window">
-          <div class="showcase-browser-bar">
-            <span class="showcase-window-dots"><i /><i /><i /></span>
-            <span>Msambizi · Educator-guided learning</span>
-            <span class="showcase-product-label">CONCEPT VISUAL</span>
+        <div class="showcase-concept-art">
+          <svg class="showcase-orbit showcase-orbit--large" viewBox="0 0 520 300" fill="none">
+            <path d="M63 232C128 90 350 54 463 163" />
+            <path d="M74 96C184 239 340 254 448 86" />
+            <path d="M100 270C208 174 319 104 425 48" />
+            <circle cx="63" cy="232" r="7" /><circle cx="463" cy="163" r="7" />
+            <circle cx="74" cy="96" r="6" /><circle cx="448" cy="86" r="6" />
+            <circle cx="100" cy="270" r="5" /><circle cx="425" cy="48" r="5" />
+          </svg>
+          <div class="showcase-concept-center">
+            <img src="/brand/msambizi-logo-on-dark.webp" alt="" />
+            <span>Educator-guided learning</span>
           </div>
-          <div class="showcase-app-content">
-            <header class="showcase-app-header">
-              <img src="/brand/msambizi-logo-on-dark.webp" alt="" width="112" height="44" />
-            </header>
-            <div class="showcase-chat-title">
-              <span class="showcase-avatar"><Sparkles :size="15" /></span>
-              <span><strong>Academic conversation</strong></span>
-            </div>
-            <div class="showcase-message showcase-message--student">
-              <p>How can I think about the relationship between energy and entropy?</p>
-            </div>
-            <div class="showcase-message showcase-message--guide">
-              <p>Begin by considering how energy spreads through a system. Which change would make that energy less concentrated?</p>
-            </div>
-          </div>
+          <span class="showcase-concept-point showcase-concept-point--one" />
+          <span class="showcase-concept-point showcase-concept-point--two" />
+          <span class="showcase-concept-point showcase-concept-point--three" />
         </div>
       </div>
       <div class="showcase-laptop-base"><span /></div>
@@ -45,16 +36,15 @@
     <div class="showcase-phone" aria-hidden="true">
       <div class="showcase-phone-camera" />
       <div class="showcase-phone-screen">
-        <div class="showcase-phone-title"><span class="showcase-avatar"><Sparkles :size="13" /></span><strong>Academic conversation</strong></div>
-        <div class="showcase-phone-bubble showcase-phone-bubble--student">How does energy spread?</div>
-        <div class="showcase-phone-bubble showcase-phone-bubble--guide">What changes as it spreads?</div>
+        <svg class="showcase-phone-orbit" viewBox="0 0 90 120" fill="none">
+          <path d="M12 91C15 47 62 23 78 56M14 39c17 51 48 63 66 18M20 109c16-35 39-63 58-89" />
+          <circle cx="12" cy="91" r="4" /><circle cx="78" cy="56" r="4" />
+          <circle cx="14" cy="39" r="3" /><circle cx="80" cy="57" r="3" />
+        </svg>
+        <img class="showcase-phone-logo" src="/brand/msambizi-logo-on-dark.webp" alt="" />
+        <span class="showcase-phone-accent" />
       </div>
     </div>
-
-    <figcaption class="showcase-caption"><span /> Concept visual · not a live product screen</figcaption>
+    <figcaption class="showcase-caption"><span />Conceptual representation · not a live product screen</figcaption>
   </figure>
 </template>
-
-<script setup lang="ts">
-import { BookOpen, Sparkles } from 'lucide-vue-next'
-</script>

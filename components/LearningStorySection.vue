@@ -4,7 +4,7 @@
       <div class="story-heading">
         <p class="eyebrow"><span class="eyebrow-rule" /> The learning story</p>
         <h2>Teaching. Independent study. <em>Guidance beyond class.</em></h2>
-        <p>Classroom teaching informs independent learning; Msambizi extends educator-guided AI learning into that wider context.</p>
+        <p>Teaching sets the direction; AI supports independent study around approved academic materials.</p>
       </div>
 
       <div class="story-sequence" aria-label="Three connected moments in the learning experience">
@@ -41,8 +41,8 @@
               <circle cx="46" cy="24" r="2" />
             </svg>
           </div>
-          <h3>Msambizi-guided learning</h3>
-          <p>Educator-guided AI supports the wider learning experience.</p>
+          <h3>Guidance beyond class</h3>
+          <p>Educators remain the guide; AI supports the wider study experience.</p>
         </article>
       </div>
     </div>

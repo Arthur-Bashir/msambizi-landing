@@ -99,36 +99,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-orange); 
 .showcase-laptop { position: absolute; z-index: 1; top: 124px; left: 1%; width: 94%; }
 .showcase-laptop-screen { position: relative; border: 7px solid #0b1423; border-bottom-width: 10px; border-radius: 11px 11px 5px 5px; background: #0b1423; box-shadow: 0 24px 55px rgb(0 0 0 / 32%); }
 .showcase-laptop-screen::before { position: absolute; z-index: 2; top: -5px; left: 50%; width: 4px; height: 4px; border-radius: 50%; background: #45556d; content: ''; }
-.showcase-app-window { overflow: hidden; min-height: 308px; border: 1px solid #26364e; border-radius: 5px; background: var(--device-bg); color: var(--device-text); }
-.showcase-browser-bar { display: grid; height: 30px; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 1px solid #26364e; background: #111e31; padding: 0 11px; color: #9aabc2; font-size: 8px; }
-.showcase-browser-bar>span:nth-child(2) { letter-spacing: .035em; }
-.showcase-browser-bar>span:nth-child(2) i { color: #6e829e; font-style: normal; }
-.showcase-window-dots { display: flex; gap: 4px; }
-.showcase-window-dots i { width: 6px; height: 6px; border-radius: 50%; background: #f5bd77; opacity: .75; }
-.showcase-window-dots i:nth-child(2) { background: #29a89a; }
-.showcase-window-dots i:nth-child(3) { background: #5578e8; }
-.showcase-product-label { justify-self: end; color: #73c5bb; font-size: 7px; font-weight: 700; letter-spacing: .12em; }
-.showcase-app-content { padding: 11px 15px 13px; }
-.showcase-app-header { display: flex; min-height: 33px; align-items: center; justify-content: space-between; border-bottom: 1px solid #24334a; padding-bottom: 9px; }
-.showcase-app-header img { display: block; width: 83px; height: auto; }
-.showcase-chat-title { display: flex; align-items: center; gap: 8px; margin: 11px 0 10px; }
-.showcase-avatar { display: inline-flex; width: 27px; height: 27px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid #354965; border-radius: 50%; background: #1d3150; color: #9db5ff; }
-.showcase-chat-title strong { display: block; }
-.showcase-chat-title strong { color: #eaf0f9; font-size: 9px; font-weight: 650; }
-.showcase-message { max-width: 89%; border: 1px solid #293b58; border-radius: 5px; padding: 8px 10px; }
-.showcase-message p { margin: 4px 0 0; color: #dbe4f1; font-size: 9px; line-height: 1.5; }
-.showcase-message--student { margin-left: auto; background: #1c3470; border-color: #2d4d9e; }
-.showcase-message--guide { margin: 9px auto 0 0; background: #17263d; }
+.showcase-concept-art { position: relative; display: grid; min-height: 308px; overflow: hidden; place-items: center; border: 1px solid #26364e; border-radius: 5px; background: radial-gradient(ellipse at center, #213759, #101b2d 72%); }
+.showcase-orbit { position: absolute; width: 100%; height: 100%; }
+.showcase-orbit path, .showcase-phone-orbit path { stroke: #6584d6; stroke-width: 1; opacity: .45; }
+.showcase-orbit circle, .showcase-phone-orbit circle { fill: #e9b875; }
+.showcase-concept-center { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.showcase-concept-center img { display: block; width: clamp(155px, 19vw, 230px); height: auto; }
+.showcase-concept-center span { color: #d0d9e8; font-size: 10px; letter-spacing: .08em; }
+.showcase-concept-point { position: absolute; z-index: 1; width: 9px; height: 9px; border: 1px solid #f5bd77; border-radius: 50%; background: #172844; box-shadow: 0 0 0 5px rgb(245 189 119 / 10%); }
+.showcase-concept-point--one { top: 25%; left: 21%; }
+.showcase-concept-point--two { right: 17%; bottom: 24%; background: #236f70; border-color: #7cc5b5; }
+.showcase-concept-point--three { top: 18%; right: 30%; background: #4566c0; border-color: #9db5ff; }
 .showcase-laptop-base { position: relative; height: 12px; margin: 0 -4.5%; border-radius: 1px 1px 45% 45%; background: linear-gradient(#9aa8bb, #596a80 70%, #29384d); box-shadow: 0 10px 16px rgb(0 0 0 / 30%); }
 .showcase-laptop-base span { position: absolute; top: 1px; left: 42%; width: 16%; height: 3px; border-radius: 0 0 5px 5px; background: #40516a; }
 .showcase-phone { position: absolute; z-index: 3; top: 203px; right: 2%; width: 128px; height: 254px; border: 5px solid #0b1423; border-radius: 22px; background: #0b1423; box-shadow: 0 22px 38px rgb(0 0 0 / 42%); }
 .showcase-phone-camera { position: absolute; z-index: 2; top: 5px; left: 50%; width: 38px; height: 8px; border-radius: 0 0 8px 8px; background: #0b1423; transform: translateX(-50%); }
-.showcase-phone-screen { height: 100%; overflow: hidden; border: 1px solid #26364e; border-radius: 16px; background: var(--device-bg); padding: 8px 7px; color: var(--device-text); }
-.showcase-phone-title { display: flex; align-items: center; gap: 5px; margin-top: 36px; color: #eaf0f9; font-size: 7px; }
-.showcase-phone-title .showcase-avatar { width: 19px; height: 19px; }
-.showcase-phone-bubble { margin-top: 10px; border: 1px solid #293b58; border-radius: 6px; padding: 7px; color: #dbe4f1; font-size: 7px; line-height: 1.5; }
-.showcase-phone-bubble--student { margin-left: 9px; background: #1c3470; border-color: #2d4d9e; }
-.showcase-phone-bubble--guide { margin-right: 5px; background: #17263d; }
+.showcase-phone-screen { position: relative; display: grid; overflow: hidden; place-items: center; border: 1px solid #26364e; border-radius: 16px; background: radial-gradient(ellipse at center, #213759, #101b2d 75%); }
+.showcase-phone-orbit { position: absolute; width: 100%; height: 72%; }
+.showcase-phone-logo { position: relative; z-index: 1; width: 72px; height: auto; }
+.showcase-phone-accent { position: absolute; bottom: 18%; width: 30px; height: 2px; background: #2aa198; }
 .showcase-caption { position: absolute; right: 2px; bottom: 9px; display: flex; align-items: center; gap: 7px; color: var(--ink-muted); font-size: 9px; letter-spacing: .025em; }
 .showcase-caption>span { width: 6px; height: 6px; border-radius: 50%; background: var(--brand-teal); }
 .hero-baseline { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 18px; margin-top: 36px; border-top: 1px solid var(--line); padding: 15px 0 17px; color: var(--ink-muted); font-size: 10px; font-weight: 700; letter-spacing: .16em; }
@@ -282,10 +271,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-orange); 
   .hero-layout { grid-template-columns: minmax(0, .95fr) minmax(310px, 1.05fr); gap: 34px; }
   .product-showcase { min-height: 460px; }
   .showcase-laptop { top: 116px; width: 96%; }
-  .showcase-app-window { min-height: 290px; }
+  .showcase-concept-art { min-height: 290px; }
   .showcase-phone { top: 205px; right: 0; width: 112px; height: 228px; }
-  .showcase-phone-title { font-size: 8px; }
-  .showcase-phone-bubble { font-size: 8px; }
   .showcase-float-label { padding: 8px 10px; }
   .showcase-float-label--materials { right: -5px; }
   .story-sequence { grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr) 42px minmax(0, 1fr); gap: 13px; }
@@ -323,27 +310,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brand-orange); 
   .showcase-float-label small { display: none; }
   .showcase-laptop { top: 87px; left: 0; width: 96%; }
   .showcase-laptop-screen { border-width: 5px; border-bottom-width: 7px; border-radius: 8px 8px 4px 4px; }
-  .showcase-app-window { min-height: 210px; }
-  .showcase-browser-bar { display: flex; height: 25px; justify-content: space-between; padding-inline: 8px; font-size: 8px; }
-  .showcase-window-dots { display: none; }
-  .showcase-product-label { font-size: 6px; }
-  .showcase-app-content { padding: 7px 8px 8px; }
-  .showcase-app-header { min-height: 24px; padding-bottom: 6px; }
-  .showcase-app-header img { width: 60px; }
-  .showcase-chat-title { gap: 5px; margin: 7px 0 6px; }
-  .showcase-avatar { width: 20px; height: 20px; }
-  .showcase-chat-title strong { font-size: 9px; }
-  .showcase-message { max-width: 94%; padding: 7px 8px; }
-  .showcase-message p { font-size: 10px; line-height: 1.4; }
-  .showcase-message--guide { margin-top: 6px; }
+  .showcase-concept-art { min-height: 210px; }
+  .showcase-concept-center { gap: 9px; }
+  .showcase-concept-center img { width: clamp(125px, 38vw, 190px); }
+  .showcase-concept-center span { font-size: 8px; }
   .showcase-laptop-base { height: 8px; }
   .showcase-phone { top: 150px; right: 1%; width: 96px; height: 190px; border-width: 4px; border-radius: 17px; }
   .showcase-phone-camera { top: 3px; width: 28px; height: 6px; }
-  .showcase-phone-screen { border-radius: 12px; padding: 6px 5px; }
-  .showcase-phone-title { gap: 4px; margin-top: 20px; font-size: 9px; }
-  .showcase-phone-title .showcase-avatar { width: 17px; height: 17px; }
-  .showcase-phone-title svg { width: 11px; height: 11px; }
-  .showcase-phone-bubble { margin-top: 8px; padding: 5px; font-size: 9px; line-height: 1.35; }
+  .showcase-phone-screen { border-radius: 12px; }
+  .showcase-phone-logo { width: 55px; }
+  .showcase-phone-orbit { height: 65%; }
   .showcase-caption { right: 0; bottom: 3px; font-size: 8px; }
   .hero-baseline { flex-wrap: wrap; gap: 9px 16px; margin-top: 22px; padding-block: 13px 15px; font-size: 10px; }
   .learning-story-section, .proposition-section, .institutional-trust-section, .institutional-engagement-section { padding-block: 60px; }
