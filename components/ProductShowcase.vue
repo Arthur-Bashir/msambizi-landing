@@ -67,7 +67,7 @@
       </button>
     </div>
 
-    <figcaption class="showcase-caption"><span />Conceptual illustration · not a live product screen or real data</figcaption>
+    <!-- <figcaption class="showcase-caption"><span />Conceptual illustration · not a live product screen or real data</figcaption> -->
   </figure>
 </template>
 
