@@ -1,6 +1,5 @@
 <template>
   <section id="top" class="hero-section">
-    <div class="hero-backdrop" aria-hidden="true"><span class="hero-grid" /><span class="hero-glow hero-glow--a" /><span class="hero-glow hero-glow--b" /></div>
     <div class="page-container hero-layout">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-rule" /> Institutional learning for universities and colleges</p>
