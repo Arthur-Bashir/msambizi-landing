@@ -8,7 +8,7 @@
       </div>
 
       <div class="proposition-map" :class="`is-active-${selectedElement}`" role="group" aria-label="Select a part of the academic relationship">
-        <button v-for="item in elements" :key="item.id" class="proposition-node" :class="[`proposition-node--${item.id}`, { 'is-selected': selectedElement === item.id }]" type="button" :aria-pressed="selectedElement === item.id" :aria-controls="'proposition-detail'" @click="selectedElement = item.id">
+        <button v-for="item in elements" :key="item.id" class="proposition-node" :class="[`proposition-node--${item.id}`, { 'is-selected': selectedElement === item.id }]" type="button" :aria-pressed="selectedElement === item.id" :aria-controls="'proposition-detail'" @focus="stopAutoplay" @click="selectElement(item.id)">
           <span>{{ item.number }} <i>—</i> {{ item.label }}</span>
           <strong>{{ item.title }}</strong>
         </button>
@@ -24,7 +24,7 @@
           <circle cx="340" cy="105" r="4" /><circle cx="560" cy="105" r="4" /><circle cx="340" cy="345" r="4" /><circle cx="560" cy="345" r="4" />
         </svg>
       </div>
-      <div id="proposition-detail" class="proposition-detail" aria-live="polite" aria-atomic="true">
+      <div id="proposition-detail" class="proposition-detail" :aria-live="autoplayEnabled ? 'off' : 'polite'" aria-atomic="true">
         <div class="proposition-detail-inner">
           <span>{{ selectedItem?.label }}</span>
           <p><strong>{{ selectedItem?.title }}:</strong> {{ selectedItem?.detail }}</p>
@@ -36,9 +36,35 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const selectedElement = ref('materials')
+const autoplayEnabled = ref(false)
+let autoplayTimer: ReturnType<typeof setInterval> | undefined
+
+function stopAutoplay() {
+  autoplayEnabled.value = false
+  if (autoplayTimer) clearInterval(autoplayTimer)
+  autoplayTimer = undefined
+}
+
+function selectElement(id: string) {
+  selectedElement.value = id
+  stopAutoplay()
+}
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  autoplayEnabled.value = true
+  autoplayTimer = setInterval(() => {
+    if (document.hidden) return
+    const currentIndex = elements.findIndex((item) => item.id === selectedElement.value)
+    selectedElement.value = elements[(currentIndex + 1) % elements.length]!.id
+  }, 3600)
+})
+
+onBeforeUnmount(stopAutoplay)
+
 const elements = [
   { id: 'materials', number: '01', label: 'THE FOUNDATION', title: 'Approved academic materials', detail: 'Syllabi, notes, and readings provided by the institution define what support can draw from—keeping learning aligned and source-grounded.' },
   { id: 'educators', number: '02', label: 'THE GUIDANCE', title: 'Educators remain central', detail: 'Teaching intent, boundaries, and oversight stay with educators, so AI assists the learning experience rather than directing it.' },

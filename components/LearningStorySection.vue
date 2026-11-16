@@ -10,7 +10,7 @@
       <div class="story-sequence" aria-label="Three connected moments in the learning experience">
         <template v-for="(stage, index) in stages" :key="stage.id">
           <article class="story-moment" :class="{ 'is-selected': selectedStage === index }">
-            <button class="story-stage-button" type="button" :aria-pressed="selectedStage === index" @click="selectedStage = index">
+            <button class="story-stage-button" type="button" :aria-pressed="selectedStage === index" @focus="stopAutoplay" @click="selectStage(index)">
               <span class="story-moment-index">0{{ index + 1 }}</span>
               <span class="story-illustration" aria-hidden="true">
                 <svg v-if="index === 0" viewBox="0 0 64 64" fill="none">
@@ -31,7 +31,7 @@
         </template>
       </div>
 
-      <div class="story-detail" aria-live="polite" aria-atomic="true" data-reveal>
+      <div class="story-detail" :aria-live="autoplayEnabled ? 'off' : 'polite'" aria-atomic="true" data-reveal>
         <div class="story-detail-inner">
           <span class="story-detail-index">0{{ selectedStage + 1 }}</span>
           <div>
@@ -46,9 +46,33 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const selectedStage = ref(0)
+const autoplayEnabled = ref(false)
+let autoplayTimer: ReturnType<typeof setInterval> | undefined
+
+function stopAutoplay() {
+  autoplayEnabled.value = false
+  if (autoplayTimer) clearInterval(autoplayTimer)
+  autoplayTimer = undefined
+}
+
+function selectStage(index: number) {
+  selectedStage.value = index
+  stopAutoplay()
+}
+
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  autoplayEnabled.value = true
+  autoplayTimer = setInterval(() => {
+    if (!document.hidden) selectedStage.value = (selectedStage.value + 1) % stages.length
+  }, 3600)
+})
+
+onBeforeUnmount(stopAutoplay)
+
 const stages = [
   {
     id: 'classroom',

@@ -418,11 +418,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 :root[data-theme='light'] .trust-visual { background: var(--surface-inset); }
 :root[data-theme='light'] .trust-item[open] { background: color-mix(in srgb, var(--brand-blue) 5%, var(--white)); }
 :root[data-theme='light'] .scene-card { background: color-mix(in srgb, var(--surface-raised) 96%, transparent); box-shadow: var(--shadow-card); }
-:root[data-theme='light'] .scene-card.is-muted { opacity: .82; }
-:root[data-theme='light'] .scene-beat { opacity: .84; }
-:root[data-theme='light'] .scene-beat.is-active,
+:root[data-theme='light'] .scene-card.is-muted { opacity: 1; background: var(--paper-deep); border-color: var(--line); box-shadow: none; }
+:root[data-theme='light'] .scene-card.is-active { background: var(--surface-raised); border-color: color-mix(in srgb, var(--brand-orange) 78%, var(--line)); box-shadow: var(--shadow-card); }
+:root[data-theme='light'] .scene-beat { opacity: 1; background: var(--paper-deep); }
+:root[data-theme='light'] .scene-beat.is-active { border-color: color-mix(in srgb, var(--brand-orange) 78%, var(--line)); background: var(--surface-raised); }
 :root[data-theme='light'] .scene-beat:hover,
-:root[data-theme='light'] .scene-beat:focus-visible { opacity: 1; }
+:root[data-theme='light'] .scene-beat:focus-visible { border-color: var(--brand-blue); }
 :root[data-theme='light'] .story-moment,
 :root[data-theme='light'] .proposition-node,
 :root[data-theme='light'] .engagement-steps li { background: color-mix(in srgb, var(--surface-raised) 88%, var(--paper-deep)); }
