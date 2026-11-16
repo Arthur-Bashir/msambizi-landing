@@ -3,8 +3,8 @@
     <div class="page-container">
       <div class="story-heading" data-reveal>
         <p class="eyebrow"><span class="eyebrow-rule" /> The learning story</p>
-        <h2>Teaching. Independent study. <em>Guidance beyond class.</em></h2>
-        <p>Teaching sets the direction; AI supports independent study around approved academic materials.</p>
+        <h2>Teaching sets direction. <em>Learning continues after class.</em></h2>
+        <p>Msambizi connects the classroom, independent study, and educator guidance into one continuous experience—so support is available when students need it, without replacing the teacher.</p>
       </div>
 
       <div class="story-sequence" aria-label="Three connected moments in the learning experience">
@@ -24,7 +24,7 @@
                 </svg>
               </span>
               <span class="story-stage-copy"><strong>{{ stage.title }}</strong><span>{{ stage.summary }}</span></span>
-              <span class="story-stage-indicator" aria-hidden="true">{{ selectedStage === index ? 'Selected' : 'Explore' }}</span>
+              <span class="story-stage-indicator" aria-hidden="true">{{ selectedStage === index ? 'In focus' : 'Explore' }}</span>
             </button>
           </article>
           <div v-if="index < stages.length - 1" class="story-connector" :class="{ 'is-active': selectedStage > index }" aria-hidden="true"><span /></div>
@@ -35,7 +35,11 @@
         <Transition name="story-panel" mode="out-in">
           <div :key="stages[selectedStage]?.id" class="story-detail-inner">
             <span class="story-detail-index">0{{ selectedStage + 1 }}</span>
-            <div><h3>{{ stages[selectedStage]?.title }}</h3><p>{{ stages[selectedStage]?.detail }}</p></div>
+            <div>
+              <h3>{{ stages[selectedStage]?.title }}</h3>
+              <p>{{ stages[selectedStage]?.detail }}</p>
+              <p class="story-detail-benefit"><strong>Institutional value:</strong> {{ stages[selectedStage]?.benefit }}</p>
+            </div>
           </div>
         </Transition>
       </div>
@@ -51,20 +55,23 @@ const stages = [
   {
     id: 'classroom',
     title: 'Classroom teaching',
-    summary: 'Educators establish knowledge and direction.',
-    detail: 'Educators establish the knowledge, context and direction that shape a course of study.',
+    summary: 'Educators set the syllabus, materials, and direction.',
+    detail: 'Lecturers and tutors provide the approved notes, readings, and course context that define what students should learn.',
+    benefit: 'Learning stays aligned to your curriculum and academic standards from the start.',
   },
   {
     id: 'study',
-    title: 'Independent study',
-    summary: 'Students return to academic materials as they study.',
-    detail: 'Students return to academic materials as they continue learning in their own study time. AI can support that work around approved materials.',
+    title: 'Independent study, after class',
+    summary: 'Students ask questions in their own words when support is needed.',
+    detail: 'As students revise or work through difficult concepts beyond class time, they can get step-by-step guidance grounded in those same approved materials.',
+    benefit: 'Extends educator reach without increasing staff workload, especially outside contact hours.',
   },
   {
     id: 'guidance',
-    title: 'Guidance beyond class',
-    summary: 'Educators remain the guide through the wider study experience.',
-    detail: 'The learning proposition keeps educators central while supporting the wider study experience beyond class.',
+    title: 'Guidance with educators in the loop',
+    summary: 'Support is cited, reviewable, and shaped by educator intent.',
+    detail: 'Responses point back to source material and encourage understanding rather than answer-dumping, while educators remain central to the learning relationship.',
+    benefit: 'Builds trust through transparency, academic integrity, and responsible AI use.',
   },
 ]
 </script>

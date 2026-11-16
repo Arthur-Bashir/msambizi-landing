@@ -16,9 +16,13 @@ import { onBeforeUnmount, onMounted } from 'vue'
 let revealObserver: IntersectionObserver | undefined
 
 onMounted(() => {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return
-  const targets = document.querySelectorAll<HTMLElement>('[data-reveal]')
+  const targets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
   if (!targets.length) return
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    targets.forEach((target) => target.classList.add('is-visible'))
+    return
+  }
 
   document.documentElement.classList.add('motion-ready')
   revealObserver = new IntersectionObserver((entries) => {
@@ -27,10 +31,10 @@ onMounted(() => {
       entry.target.classList.add('is-visible')
       revealObserver?.unobserve(entry.target)
     }
-  }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' })
+  }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' })
 
   targets.forEach((target, index) => {
-    target.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 65}ms`)
+    target.style.setProperty('--reveal-delay', `${Math.min(index % 5, 4) * 55}ms`)
     revealObserver?.observe(target)
   })
 })

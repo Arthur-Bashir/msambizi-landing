@@ -2,9 +2,9 @@
   <section id="proposition" class="proposition-section" tabindex="-1">
     <div class="page-container">
       <div class="proposition-heading" data-reveal>
-        <p class="eyebrow"><span class="eyebrow-rule" /> The Msambizi proposition</p>
-        <h2>Four parts of <em>one academic relationship.</em></h2>
-        <p>Institutions set the academic context; educators guide learning, and AI supports students as they engage with approved materials.</p>
+        <p class="eyebrow"><span class="eyebrow-rule" /> How it works for institutions</p>
+        <h2>Four parts of <em>one governed learning relationship.</em></h2>
+        <p>Explore how Msambizi keeps learning grounded, educator-led, and supportive—so AI strengthens the academic experience without taking control away from your institution.</p>
       </div>
 
       <div class="proposition-map" :class="`is-active-${selectedElement}`" role="group" aria-label="Select a part of the academic relationship">
@@ -27,11 +27,12 @@
       <div id="proposition-detail" class="proposition-detail" aria-live="polite" aria-atomic="true" data-reveal>
         <Transition name="proposition-panel" mode="out-in">
           <div :key="selectedItem?.id" class="proposition-detail-inner">
-            <span>{{ selectedItem?.label }}</span><p>{{ selectedItem?.detail }}</p>
+            <span>{{ selectedItem?.label }}</span>
+            <p><strong>{{ selectedItem?.title }}:</strong> {{ selectedItem?.detail }}</p>
           </div>
         </Transition>
       </div>
-      <p class="proposition-caption">A conceptual relationship—not a product screen or workflow.</p>
+      <p class="proposition-caption">A conceptual relationship—showing governance and learning flow, not a live product screen.</p>
     </div>
   </section>
 </template>
@@ -41,10 +42,10 @@ import { computed, ref } from 'vue'
 
 const selectedElement = ref('materials')
 const elements = [
-  { id: 'materials', number: '01', label: 'THE FOUNDATION', title: 'Approved academic materials', detail: 'Academic materials provide the context for the learning proposition.' },
-  { id: 'educators', number: '02', label: 'THE GUIDANCE', title: 'Educators remain central', detail: 'Educators establish direction and remain central to the learning relationship.' },
-  { id: 'support', number: '03', label: 'THE SUPPORT', title: 'AI-supported learning', detail: 'AI is positioned as a supporting capability around academic learning.' },
-  { id: 'students', number: '04', label: 'THE EXPERIENCE', title: 'Student learning', detail: 'Students engage with academic materials within an educator-guided context.' },
+  { id: 'materials', number: '01', label: 'THE FOUNDATION', title: 'Approved academic materials', detail: 'Syllabi, notes, and readings provided by the institution define what support can draw from—keeping learning aligned and source-grounded.' },
+  { id: 'educators', number: '02', label: 'THE GUIDANCE', title: 'Educators remain central', detail: 'Teaching intent, boundaries, and oversight stay with educators, so AI assists the learning experience rather than directing it.' },
+  { id: 'support', number: '03', label: 'THE SUPPORT', title: 'AI-supported, step-by-step help', detail: 'Students receive guided explanations that encourage understanding and point back to materials, supporting learning beyond scheduled class time.' },
+  { id: 'students', number: '04', label: 'THE EXPERIENCE', title: 'Confident student learning', detail: 'Learners can ask in their own words and get timely help within an educator-guided context—building clarity when it matters most.' },
 ]
 const selectedItem = computed(() => elements.find((item) => item.id === selectedElement.value))
 </script>
