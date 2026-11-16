@@ -25,7 +25,7 @@
         </svg>
       </div>
       <div id="proposition-detail" class="proposition-detail" :aria-live="autoplayEnabled ? 'off' : 'polite'" aria-atomic="true">
-        <div class="proposition-detail-inner">
+        <div :key="selectedItem?.id" class="proposition-detail-inner">
           <span>{{ selectedItem?.label }}</span>
           <p><strong>{{ selectedItem?.title }}:</strong> {{ selectedItem?.detail }}</p>
         </div>

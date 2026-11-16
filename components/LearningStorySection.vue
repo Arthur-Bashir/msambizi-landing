@@ -32,7 +32,7 @@
       </div>
 
       <div class="story-detail" :aria-live="autoplayEnabled ? 'off' : 'polite'" aria-atomic="true" data-reveal>
-        <div class="story-detail-inner">
+        <div :key="stages[selectedStage]?.id" class="story-detail-inner">
           <span class="story-detail-index">0{{ selectedStage + 1 }}</span>
           <div>
             <h3>{{ stages[selectedStage]?.title }}</h3>
