@@ -2,21 +2,18 @@
   <button
     class="theme-toggle"
     type="button"
-    :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-    :title="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+    aria-label="Switch colour theme"
+    title="Switch colour theme"
     @click="toggleTheme"
   >
-    <Sun v-if="theme === 'dark'" :size="17" aria-hidden="true" />
-    <Moon v-else :size="17" aria-hidden="true" />
-    <span>{{ theme === 'dark' ? 'Light mode' : 'Dark mode' }}</span>
+    <Sun class="theme-icon--dark" :size="17" aria-hidden="true" />
+    <Moon class="theme-icon--light" :size="17" aria-hidden="true" />
+    <span>Change theme</span>
   </button>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
 import { Moon, Sun } from 'lucide-vue-next'
 
-const { theme, initializeTheme, toggleTheme } = useTheme()
-
-onMounted(initializeTheme)
+const { toggleTheme } = useTheme()
 </script>

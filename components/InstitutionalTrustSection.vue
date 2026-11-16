@@ -6,7 +6,7 @@
         <h2>Built for academic purpose. <em>Aligned to institutional priorities.</em></h2>
       </div>
       <div class="trust-accordion">
-        <details v-for="(item, index) in considerations" :key="item.id" class="trust-item" data-reveal>
+        <details v-for="(item, index) in considerations" :key="item.id" class="trust-item">
           <summary>
             <span class="trust-item-number">0{{ index + 1 }}</span>
             <span class="trust-item-title">{{ item.title }}</span>

@@ -8,7 +8,7 @@ export function useTheme() {
     if (!import.meta.client) return
 
     document.documentElement.dataset.theme = value
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', value === 'dark' ? '#0b182c' : '#f5f7fb')
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', value === 'dark' ? '#0b182c' : '#f3f6fa')
     try {
       window.localStorage.setItem('msambizi-theme', value)
     } catch {

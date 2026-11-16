@@ -30,7 +30,7 @@
         </li>
       </ol>
       <p class="engagement-note" data-reveal>A suggested path for institutional discussion; each step and any scope are agreed with the institution.</p>
-      <div class="engagement-actions" data-reveal>
+      <div class="engagement-actions">
         <a class="button-primary engagement-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation">
           Request an Institutional Presentation <ArrowRight :size="17" aria-hidden="true" />
         </a>

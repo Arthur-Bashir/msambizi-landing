@@ -8,12 +8,12 @@
       </div>
 
       <div class="proposition-map" :class="`is-active-${selectedElement}`" role="group" aria-label="Select a part of the academic relationship">
-        <button v-for="item in elements" :key="item.id" class="proposition-node" :class="[`proposition-node--${item.id}`, { 'is-selected': selectedElement === item.id }]" type="button" :aria-pressed="selectedElement === item.id" :aria-controls="'proposition-detail'" data-reveal @click="selectedElement = item.id">
+        <button v-for="item in elements" :key="item.id" class="proposition-node" :class="[`proposition-node--${item.id}`, { 'is-selected': selectedElement === item.id }]" type="button" :aria-pressed="selectedElement === item.id" :aria-controls="'proposition-detail'" @click="selectedElement = item.id">
           <span>{{ item.number }} <i>—</i> {{ item.label }}</span>
           <strong>{{ item.title }}</strong>
         </button>
 
-        <div class="proposition-core" data-reveal>
+        <div class="proposition-core">
           <span class="proposition-core-mark">M</span>
           <strong>Learning guided<br />by educators</strong>
           <span class="proposition-core-name">MSAMBIZI</span>
@@ -24,13 +24,11 @@
           <circle cx="340" cy="105" r="4" /><circle cx="560" cy="105" r="4" /><circle cx="340" cy="345" r="4" /><circle cx="560" cy="345" r="4" />
         </svg>
       </div>
-      <div id="proposition-detail" class="proposition-detail" aria-live="polite" aria-atomic="true" data-reveal>
-        <Transition name="proposition-panel" mode="out-in">
-          <div :key="selectedItem?.id" class="proposition-detail-inner">
-            <span>{{ selectedItem?.label }}</span>
-            <p><strong>{{ selectedItem?.title }}:</strong> {{ selectedItem?.detail }}</p>
-          </div>
-        </Transition>
+      <div id="proposition-detail" class="proposition-detail" aria-live="polite" aria-atomic="true">
+        <div class="proposition-detail-inner">
+          <span>{{ selectedItem?.label }}</span>
+          <p><strong>{{ selectedItem?.title }}:</strong> {{ selectedItem?.detail }}</p>
+        </div>
       </div>
       <p class="proposition-caption">A conceptual relationship—showing governance and learning flow, not a live product screen.</p>
     </div>

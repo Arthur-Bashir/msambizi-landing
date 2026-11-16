@@ -3,9 +3,9 @@
     class="product-showcase continuity-scene"
     role="group"
     aria-label="Conceptual interactive illustration: educator-approved materials guide student learning after class, with cited support and educator review."
-    data-reveal
     @pointermove="handlePointerMove"
     @pointerleave="resetPointer"
+    @focusin="paused = true"
   >
     <div class="showcase-halo" aria-hidden="true" />
     <div class="scene-ambient" aria-hidden="true">
@@ -27,39 +27,39 @@
       <article class="scene-card scene-card--materials" :class="{ 'is-active': activeBeat === 0, 'is-muted': activeBeat !== 0 }">
         <span class="scene-tag">01 · Educators</span>
         <strong>Approved materials</strong>
-        <p v-if="activeBeat === 0">Course notes and syllabi set clear, grounded boundaries.</p>
+        <p>Course notes and syllabi set clear, grounded boundaries.</p>
       </article>
 
       <article class="scene-card scene-card--student" :class="{ 'is-active': activeBeat === 1, 'is-muted': activeBeat !== 1 }">
         <span class="scene-tag">02 · After class</span>
         <strong>Student question</strong>
-        <p v-if="activeBeat === 1" class="scene-bubble">“Why do leaves need chlorophyll?”</p>
+        <p class="scene-bubble">“Why do leaves need chlorophyll?”</p>
       </article>
 
       <article class="scene-card scene-card--support" :class="{ 'is-active': activeBeat === 2, 'is-muted': activeBeat !== 2 }">
         <span class="scene-tag">03 · Guided support</span>
         <strong>Cited, step-by-step help</strong>
-        <p v-if="activeBeat === 2" class="scene-answer">Guidance explains from class notes and prompts thinking.</p>
-        <div v-if="activeBeat === 2" class="scene-citations">
+        <p class="scene-answer">Guidance explains from class notes and prompts thinking.</p>
+        <div class="scene-citations">
           <span class="scene-cite">Source cited</span>
           <span class="scene-review">Educator in loop</span>
         </div>
       </article>
 
       <div class="scene-core" :class="`beat-${activeBeat}`">
-        <img src="/brand/msambizi-logo-on-dark.webp" alt="" />
+        <img class="brand-logo--dark" src="/brand/msambizi-logo-on-dark.webp" alt="" width="445" height="176" />
+        <img class="brand-logo--light" src="/brand/msambizi-logo-on-light.webp" alt="" width="453" height="176" />
       </div>
     </div>
 
-    <div class="scene-controls" role="tablist" aria-label="Explore how Msambizi supports learning">
+    <div class="scene-controls" role="group" aria-label="Emphasize a moment in the learning story">
       <button
         v-for="(beat, index) in beats"
         :key="beat.id"
         type="button"
-        role="tab"
         class="scene-beat"
         :class="{ 'is-active': activeBeat === index }"
-        :aria-selected="activeBeat === index"
+        :aria-pressed="activeBeat === index"
         @click="selectBeat(index)"
       >
         <span class="scene-beat-dot" aria-hidden="true" />
@@ -92,7 +92,7 @@ function selectBeat(index: number) {
 function startAutoPlay() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   timer = setInterval(() => {
-    if (!paused.value) activeBeat.value = (activeBeat.value + 1) % beats.length
+    if (!paused.value && !document.hidden) activeBeat.value = (activeBeat.value + 1) % beats.length
   }, 3600)
 }
 

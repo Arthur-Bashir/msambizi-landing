@@ -9,7 +9,7 @@
 
       <div class="story-sequence" aria-label="Three connected moments in the learning experience">
         <template v-for="(stage, index) in stages" :key="stage.id">
-          <article class="story-moment" :class="{ 'is-selected': selectedStage === index }" data-reveal>
+          <article class="story-moment" :class="{ 'is-selected': selectedStage === index }">
             <button class="story-stage-button" type="button" :aria-pressed="selectedStage === index" @click="selectedStage = index">
               <span class="story-moment-index">0{{ index + 1 }}</span>
               <span class="story-illustration" aria-hidden="true">
@@ -32,16 +32,14 @@
       </div>
 
       <div class="story-detail" aria-live="polite" aria-atomic="true" data-reveal>
-        <Transition name="story-panel" mode="out-in">
-          <div :key="stages[selectedStage]?.id" class="story-detail-inner">
-            <span class="story-detail-index">0{{ selectedStage + 1 }}</span>
-            <div>
-              <h3>{{ stages[selectedStage]?.title }}</h3>
-              <p>{{ stages[selectedStage]?.detail }}</p>
-              <p class="story-detail-benefit"><strong>Institutional value:</strong> {{ stages[selectedStage]?.benefit }}</p>
-            </div>
+        <div class="story-detail-inner">
+          <span class="story-detail-index">0{{ selectedStage + 1 }}</span>
+          <div>
+            <h3>{{ stages[selectedStage]?.title }}</h3>
+            <p>{{ stages[selectedStage]?.detail }}</p>
+            <p class="story-detail-benefit"><strong>Institutional value:</strong> {{ stages[selectedStage]?.benefit }}</p>
           </div>
-        </Transition>
+        </div>
       </div>
     </div>
   </section>

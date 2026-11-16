@@ -35,6 +35,10 @@ export default defineNuxtConfig({
       ],
       script: [
         {
+          key: 'theme-init',
+          textContent: "(function(){try{const saved=localStorage.getItem('msambizi-theme');if(saved==='light'||saved==='dark'){document.documentElement.dataset.theme=saved}}catch{}})()",
+        },
+        {
           type: 'application/ld+json',
           textContent: JSON.stringify({
             '@context': 'https://schema.org',
