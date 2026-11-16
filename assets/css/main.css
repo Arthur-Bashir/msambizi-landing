@@ -139,8 +139,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 :root[data-theme='light'] .scene-core .brand-logo--dark { display: none; }
 :root[data-theme='light'] .scene-core .brand-logo--light { display: block; }
 .scene-card { position: absolute; width: min(42%, 210px); border: 1px solid var(--line); border-radius: 10px; background: color-mix(in srgb, var(--white) 86%, transparent); backdrop-filter: blur(6px); padding: 10px 11px; box-shadow: 0 10px 22px rgb(0 0 0 / 12%); transition: transform .3s var(--ease-out), border-color .3s ease, box-shadow .3s ease, opacity .3s ease; }
-.scene-card.is-muted { opacity: .82; transform: scale(.985); }
-.scene-card.is-active { opacity: 1; border-color: color-mix(in srgb, var(--brand-orange) 55%, var(--line)); box-shadow: 0 16px 30px rgb(0 0 0 / 18%); transform: translateY(-2px) scale(1.01); z-index: 3; }
+.scene-card.is-muted { opacity: .7; transform: scale(.985); }
+.scene-card.is-active { opacity: 1; border-color: color-mix(in srgb, var(--brand-orange) 74%, var(--line)); box-shadow: 0 16px 30px rgb(0 0 0 / 18%); transform: translateY(-2px) scale(1.01); z-index: 3; }
 .scene-card--materials { left: 0; top: 8px; }
 .scene-card--student { right: 0; top: 8px; }
 .scene-card--support { left: 50%; bottom: 8px; width: min(68%, 300px); transform: translateX(-50%); }
@@ -157,9 +157,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .scene-review { background: color-mix(in srgb, var(--brand-teal) 16%, transparent); color: #7dd3c7; border: 1px solid color-mix(in srgb, var(--brand-teal) 28%, transparent); }
 :root[data-theme='light'] .scene-review { color: var(--brand-teal); }
 .scene-controls { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 6px; margin: 8px 14px 6px; }
-.scene-beat { display: flex; align-items: center; gap: 8px; width: 100%; border: 1px solid var(--line); border-radius: 8px; background: color-mix(in srgb, var(--paper-deep) 50%, transparent); padding: 7px 8px; color: var(--ink); text-align: left; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
+.scene-beat { display: flex; align-items: center; gap: 8px; width: 100%; border: 1px solid var(--line); border-radius: 8px; background: color-mix(in srgb, var(--paper-deep) 50%, transparent); padding: 7px 8px; color: var(--ink); text-align: left; cursor: pointer; opacity: .76; transition: border-color .2s ease, background .2s ease, opacity .2s ease; }
+.scene-beat.is-active, .scene-beat:hover, .scene-beat:focus-visible { opacity: 1; }
 .scene-beat:hover { border-color: color-mix(in srgb, var(--brand-link) 35%, var(--line)); }
-.scene-beat.is-active { border-color: color-mix(in srgb, var(--brand-orange) 55%, var(--line)); background: color-mix(in srgb, var(--white) 65%, transparent); }
+.scene-beat.is-active { border-color: color-mix(in srgb, var(--brand-orange) 74%, var(--line)); background: color-mix(in srgb, var(--white) 78%, transparent); }
 .scene-beat-dot { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%; background: var(--line); transition: background .2s ease, box-shadow .2s ease; }
 .scene-beat.is-active .scene-beat-dot { background: var(--brand-orange); box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-orange) 16%, transparent); }
 .scene-beat-copy strong, .scene-beat-copy small { display: block; }
@@ -375,7 +376,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .product-showcase { height: auto; min-height: 0; padding-bottom: 6px; }
   .scene-stage { height: auto; margin: 12px 12px 0; display: grid; gap: 8px; }
   .scene-card { position: relative; width: 100%; left: auto; right: auto; top: auto; bottom: auto; }
-  .scene-card.is-muted { opacity: .88; transform: none; }
+  .scene-card.is-muted { opacity: .74; transform: none; }
   .scene-card--support, .scene-card--support.is-active, .scene-card--support.is-muted { transform: none; width: 100%; left: auto; }
   .scene-core { display: none; }
   .scene-flow { display: none; }
@@ -417,7 +418,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 :root[data-theme='light'] .trust-visual { background: var(--surface-inset); }
 :root[data-theme='light'] .trust-item[open] { background: color-mix(in srgb, var(--brand-blue) 5%, var(--white)); }
 :root[data-theme='light'] .scene-card { background: color-mix(in srgb, var(--surface-raised) 96%, transparent); box-shadow: var(--shadow-card); }
-:root[data-theme='light'] .scene-card.is-muted { opacity: .94; }
+:root[data-theme='light'] .scene-card.is-muted { opacity: .82; }
+:root[data-theme='light'] .scene-beat { opacity: .84; }
+:root[data-theme='light'] .scene-beat.is-active,
+:root[data-theme='light'] .scene-beat:hover,
+:root[data-theme='light'] .scene-beat:focus-visible { opacity: 1; }
 :root[data-theme='light'] .story-moment,
 :root[data-theme='light'] .proposition-node,
 :root[data-theme='light'] .engagement-steps li { background: color-mix(in srgb, var(--surface-raised) 88%, var(--paper-deep)); }
