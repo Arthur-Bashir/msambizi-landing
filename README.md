@@ -25,8 +25,9 @@ Output: `.output/public` — deploy to any static host or to the domain root.
 - The public copy is adapted from Msambizi's current website for a university and college audience; school and tutor messaging is intentionally excluded.
 - The current brand palette, Inter typography, and official Msambizi wordmark variants are used throughout.
 - `/login` is an informational workspace-access placeholder; authentication is not implemented.
-- The homepage uses five sections to communicate the institutional learning proposition and a proposed engagement journey.
+- The homepage uses five sections to explain the learning journey, academic approach, institutional considerations, and presentation request path.
 - The homepage hero uses a CSS-built, explicitly illustrative laptop-and-phone concept rather than a live product screenshot; its academic conversation is neutral and contains no school-level references.
 - Presentation/contact links use the existing `support@msambizi.school` mailbox; confirm mailbox ownership and deliverability before launch.
-- The homepage uses local logo assets and original CSS/SVG illustrations. No live product screen or photography is presented.
+- The homepage uses local logo assets, original CSS/SVG illustrations, and a University of Malawi student photograph used under CC BY-SA 4.0. Attribution and source links appear in the learning-story section.
+- University of Malawi photograph: “UoM Students.jpg” by Putsud, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:UoM_Students.jpg), under the Creative Commons Attribution-Share Alike 4.0 International license.
 - Privacy, terms, and security destinations are omitted until real policy pages are available.

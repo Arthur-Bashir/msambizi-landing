@@ -5,15 +5,15 @@
         <img class="brand-logo brand-logo--dark" src="/brand/msambizi-logo-on-dark.webp" alt="Msambizi — Ask, Learn, Excel" width="445" height="176" />
         <img class="brand-logo brand-logo--light" src="/brand/msambizi-logo-on-light.webp" alt="Msambizi — Ask, Learn, Excel" width="453" height="176" />
       </a>
-      <p>Ask. Learn. Excel. With educators guiding the way.</p>
+      <p>Ask. Learn. Excel. For universities and colleges.</p>
+    </div>
+    <div class="page-container footer-bottom">
+      <span>© {{ year }} Msambizi · Illustrations are conceptual; no live product screens shown.</span>
       <nav aria-label="Footer navigation">
-        <a href="#proposition">Our approach</a>
-        <a href="#institutional-trust">For institutions</a>
-        <a href="#institutional-engagement">Institutional engagement</a>
-        <a href="mailto:support@msambizi.school?subject=Engage%20with%20the%20Msambizi%20team">Contact Msambizi</a>
+        <a href="#learning-story">How it works</a>
+        <a href="#institutional-engagement">For institutions</a>
       </nav>
     </div>
-    <div class="page-container footer-bottom"><span>© {{ year }} Msambizi</span><span>Institutional technology for higher education</span></div>
   </footer>
 </template>
 

@@ -19,37 +19,39 @@
           <h1 id="workspace-story-heading">Extend the reach of educators. <em>Strengthen learning.</em></h1>
           <p>Msambizi brings educator-guided learning to universities and colleges.</p>
         </div>
-        <div class="login-art" aria-hidden="true">
-          <div class="login-art-ring login-art-ring--outer" />
-          <div class="login-art-ring login-art-ring--inner" />
-          <div class="login-art-sun" />
-          <div class="login-art-building">
-            <i /><i /><i /><i /><i />
-          </div>
-          <span class="login-art-caption">A place to ask, learn and excel.</span>
-        </div>
-        <p class="login-story-footer">ASK <i /> LEARN <i /> EXCEL</p>
+        <p class="login-story-footer">UNIVERSITIES <i /> COLLEGES</p>
       </section>
 
       <section class="login-card access-card" aria-labelledby="workspace-heading">
-        <div class="login-card-mark" aria-hidden="true"><GraduationCap :size="23" /></div>
-        <p class="login-card-eyebrow">Institutional platform</p>
-        <h2 id="workspace-heading">Workspace access is coming.</h2>
-        <p class="login-card-intro">Workspace access will be made available when the institutional platform is ready.</p>
-        <p class="access-contact-copy">For questions from a university or college, contact the Msambizi team.</p>
-        <div class="access-actions">
-          <a class="button-primary access-contact" href="mailto:support@msambizi.school?subject=Msambizi%20workspace%20access">
-            Contact the Msambizi team <ArrowRight :size="17" aria-hidden="true" />
-          </a>
-          <a class="text-link" href="/">Return to homepage <ArrowLeft :size="15" aria-hidden="true" /></a>
-        </div>
+        <p class="login-card-eyebrow">Institutional workspace</p>
+        <h2 id="workspace-heading">Sign in</h2>
+        <p class="login-card-intro">Use your university or college workspace account.</p>
+
+        <form class="login-form" autocomplete="on" @submit.prevent>
+          <div class="login-field">
+            <label for="workspace-email">Email address</label>
+            <input id="workspace-email" name="email" type="email" autocomplete="username" placeholder="name@institution.edu" required />
+          </div>
+          <div class="login-field">
+            <label for="workspace-password">Password</label>
+            <input id="workspace-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+          </div>
+          <label class="login-remember" for="remember-workspace">
+            <input id="remember-workspace" name="remember" type="checkbox" value="true" />
+            <span>Remember this device</span>
+          </label>
+          <button class="button-primary login-submit" type="button">Sign in <ArrowRight :size="17" aria-hidden="true" /></button>
+        </form>
+
+        <p class="login-unavailable">Authentication is not connected yet. For workspace access help, <a href="mailto:support@msambizi.school?subject=Msambizi%20workspace%20access">contact the Msambizi team</a>.</p>
+        <a class="text-link login-return" href="/"><ArrowLeft :size="15" aria-hidden="true" /> Return to homepage</a>
       </section>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ArrowLeft, ArrowRight, GraduationCap } from 'lucide-vue-next'
+import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 
 const description = 'A learning platform for universities and colleges, grounded in approved course materials and guided by educators. AI supports the learning experience.'
 const socialTitle = 'Msambizi — Extend the Reach of Educators'

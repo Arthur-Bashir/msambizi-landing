@@ -5,7 +5,6 @@
     aria-label="Conceptual interactive illustration: educator-approved materials guide student learning after class, with cited support and educator review."
     @pointermove="handlePointerMove"
     @pointerleave="resetPointer"
-    @focusin="paused = true"
   >
     <div class="showcase-halo" aria-hidden="true" />
     <div class="scene-ambient" aria-hidden="true">
@@ -25,24 +24,23 @@
       </svg>
 
       <article class="scene-card scene-card--materials" :class="{ 'is-active': activeBeat === 0, 'is-muted': activeBeat !== 0 }">
-        <span class="scene-tag">01 · Educators</span>
+        <span class="scene-tag">Educators</span>
         <strong>Approved materials</strong>
         <p>Course notes and syllabi set clear, grounded boundaries.</p>
       </article>
 
       <article class="scene-card scene-card--student" :class="{ 'is-active': activeBeat === 1, 'is-muted': activeBeat !== 1 }">
-        <span class="scene-tag">02 · After class</span>
+        <span class="scene-tag">After class</span>
         <strong>Student question</strong>
         <p class="scene-bubble">“Why do leaves need chlorophyll?”</p>
       </article>
 
       <article class="scene-card scene-card--support" :class="{ 'is-active': activeBeat === 2, 'is-muted': activeBeat !== 2 }">
-        <span class="scene-tag">03 · Guided support</span>
+        <span class="scene-tag">Guided support</span>
         <strong>Cited, step-by-step help</strong>
         <p class="scene-answer">Guidance explains from class notes and prompts thinking.</p>
         <div class="scene-citations">
-          <span class="scene-cite">Source cited</span>
-          <span class="scene-review">Educator in loop</span>
+          <span class="scene-cite">Course source cited</span>
         </div>
       </article>
 
@@ -63,37 +61,25 @@
         @click="selectBeat(index)"
       >
         <span class="scene-beat-dot" aria-hidden="true" />
-        <span class="scene-beat-copy"><strong>{{ beat.label }}</strong><small>{{ beat.caption }}</small></span>
+        <span class="scene-beat-copy"><strong>{{ beat.label }}</strong></span>
       </button>
     </div>
-
-    <!-- <figcaption class="showcase-caption"><span />Conceptual illustration · not a live product screen or real data</figcaption> -->
   </figure>
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
 const activeBeat = ref(0)
-const paused = ref(false)
-let timer: ReturnType<typeof setInterval> | undefined
 
 const beats = [
-  { id: 'materials', label: 'Set by educators', caption: 'Approved materials define the context' },
-  { id: 'study', label: 'After class', caption: 'Students ask as they study' },
-  { id: 'support', label: 'Guided & reviewed', caption: 'Cited support, educator in the loop' },
+  { id: 'materials', label: 'Set by educators' },
+  { id: 'study', label: 'After class' },
+  { id: 'support', label: 'Guided & reviewed' },
 ]
 
 function selectBeat(index: number) {
   activeBeat.value = index
-  paused.value = true
-}
-
-function startAutoPlay() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-  timer = setInterval(() => {
-    if (!paused.value && !document.hidden) activeBeat.value = (activeBeat.value + 1) % beats.length
-  }, 3600)
 }
 
 function handlePointerMove(event: PointerEvent) {
@@ -109,7 +95,4 @@ function resetPointer(event: PointerEvent) {
   element.style.setProperty('--pointer-x', '0')
   element.style.setProperty('--pointer-y', '0')
 }
-
-onMounted(startAutoPlay)
-onBeforeUnmount(() => { if (timer) clearInterval(timer) })
 </script>

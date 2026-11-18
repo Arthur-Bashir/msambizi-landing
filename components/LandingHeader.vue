@@ -21,12 +21,12 @@
       </button>
 
       <nav id="primary-navigation" ref="navigationElement" class="primary-navigation" :class="{ 'is-open': open }" aria-label="Main navigation">
-        <a href="#learning-story" :aria-current="activeSection === 'learning-story' ? 'location' : undefined" @click="navigateToSection('learning-story')">The learning story</a>
+        <a href="#learning-story" :aria-current="activeSection === 'learning-story' ? 'location' : undefined" @click="navigateToSection('learning-story')">How it works</a>
         <a href="#proposition" :aria-current="activeSection === 'proposition' ? 'location' : undefined" @click="navigateToSection('proposition')">Our approach</a>
-        <a href="#institutional-trust" :aria-current="activeSection === 'institutional-trust' ? 'location' : undefined" @click="navigateToSection('institutional-trust')">For institutions</a>
-        <a href="#institutional-engagement" :aria-current="activeSection === 'institutional-engagement' ? 'location' : undefined" @click="navigateToSection('institutional-engagement')">Engagement</a>
+        <a href="#institutional-trust" :aria-current="activeSection === 'institutional-trust' ? 'location' : undefined" @click="navigateToSection('institutional-trust')">Institutional fit</a>
         <ThemeToggle />
-        <a class="button-primary header-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation" @click="closeMenu(true)">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
+        <a class="header-login-link" href="/login" @click="closeMenu()">Sign in</a>
+        <a class="button-primary header-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation" @click="closeMenu()">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
       </nav>
     </div>
   </header>
@@ -90,7 +90,7 @@ onMounted(() => {
       const current = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
       if (current?.target.id) activeSection.value = current.target.id
     }, { rootMargin: '-18% 0px -68% 0px' })
-    document.querySelectorAll<HTMLElement>('#learning-story, #proposition, #institutional-trust, #institutional-engagement').forEach((section) => sectionObserver?.observe(section))
+    document.querySelectorAll<HTMLElement>('#learning-story, #proposition, #institutional-trust').forEach((section) => sectionObserver?.observe(section))
   }
 })
 
