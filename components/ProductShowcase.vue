@@ -12,7 +12,6 @@
       <span class="scene-orb scene-orb--two" />
       <span class="scene-orb scene-orb--three" />
     </div>
-
     <div class="scene-stage" aria-hidden="true">
       <svg class="scene-flow" viewBox="0 0 520 300" fill="none">
         <path class="flow-path" d="M90 110C170 88 235 118 265 150" />
@@ -22,34 +21,24 @@
         <circle cx="268" cy="158" r="5" class="flow-node flow-node--core" />
         <circle cx="440" cy="190" r="4" class="flow-node" />
       </svg>
-
       <article class="scene-card scene-card--materials" :class="{ 'is-active': activeBeat === 0, 'is-muted': activeBeat !== 0 }">
-        <span class="scene-tag">Educators</span>
-        <strong>Approved materials</strong>
+        <span class="scene-tag">Educators</span><strong>Approved materials</strong>
         <p>Course notes and syllabi set clear, grounded boundaries.</p>
       </article>
-
       <article class="scene-card scene-card--student" :class="{ 'is-active': activeBeat === 1, 'is-muted': activeBeat !== 1 }">
-        <span class="scene-tag">After class</span>
-        <strong>Student question</strong>
+        <span class="scene-tag">After class</span><strong>Student question</strong>
         <p class="scene-bubble">“Why do leaves need chlorophyll?”</p>
       </article>
-
       <article class="scene-card scene-card--support" :class="{ 'is-active': activeBeat === 2, 'is-muted': activeBeat !== 2 }">
-        <span class="scene-tag">Guided support</span>
-        <strong>Cited, step-by-step help</strong>
+        <span class="scene-tag">Guided support</span><strong>Cited, step-by-step help</strong>
         <p class="scene-answer">Guidance explains from class notes and prompts thinking.</p>
-        <div class="scene-citations">
-          <span class="scene-cite">Course source cited</span>
-        </div>
+        <div class="scene-citations"><span class="scene-cite">Cited · educator-reviewed</span></div>
       </article>
-
       <div class="scene-core" :class="`beat-${activeBeat}`">
         <img class="brand-logo--dark" src="/brand/msambizi-logo-on-dark.webp" alt="" width="445" height="176" />
         <img class="brand-logo--light" src="/brand/msambizi-logo-on-light.webp" alt="" width="453" height="176" />
       </div>
     </div>
-
     <div class="scene-controls" role="group" aria-label="Emphasize a moment in the learning story">
       <button
         v-for="(beat, index) in beats"
@@ -71,7 +60,6 @@
 import { ref } from 'vue'
 
 const activeBeat = ref(0)
-
 const beats = [
   { id: 'materials', label: 'Set by educators' },
   { id: 'study', label: 'After class' },

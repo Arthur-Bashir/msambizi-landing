@@ -1,7 +1,7 @@
 type ThemeMode = 'dark' | 'light'
 
 export function useTheme() {
-  const theme = useState<ThemeMode>('msambizi-theme', () => 'dark')
+  const theme = useState<ThemeMode>('msambizi-theme', () => 'light')
 
   function applyTheme(value: ThemeMode) {
     theme.value = value
@@ -21,9 +21,9 @@ export function useTheme() {
 
     try {
       const savedTheme = window.localStorage.getItem('msambizi-theme')
-      applyTheme(savedTheme === 'light' ? 'light' : 'dark')
+      applyTheme(savedTheme === 'dark' ? 'dark' : 'light')
     } catch {
-      applyTheme('dark')
+      applyTheme('light')
     }
   }
 

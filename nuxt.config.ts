@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Msambizi — Extend the Reach of Educators',
-      htmlAttrs: { lang: 'en' },
+      htmlAttrs: { lang: 'en', 'data-theme': 'light' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         { name: 'twitter:description', content: 'A university and college learning platform grounded in approved materials and guided by educators, with AI supporting the learning experience.' },
         { name: 'twitter:image', content: 'https://msambizi.africa/brand/msambizi-social-preview.png' },
         { name: 'twitter:image:alt', content: 'Msambizi logo above the headline “Faculty guidance. Even after class.” and a description of educator-guided learning for universities and colleges, on a navy background.' },
-        { name: 'theme-color', content: '#0b182c' },
+        { name: 'theme-color', content: '#f3f6fa' },
         { property: 'og:url', content: 'https://msambizi.africa/' },
       ],
       link: [
