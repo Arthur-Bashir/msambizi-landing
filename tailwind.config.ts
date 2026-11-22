@@ -11,8 +11,8 @@ export default <Partial<Config>>{
         ochre: { 400: '#c9a673', 500: '#c08a52', 700: '#926f47' },
       },
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['"Space Grotesk"', 'ui-monospace', 'monospace'],
       },
     },
