@@ -1,86 +1,106 @@
 <template>
   <figure
-    class="product-showcase continuity-scene"
+    class="product-showcase campaign-visual"
     role="group"
-    aria-label="Conceptual interactive illustration: educator-approved materials guide student learning after class, with cited support and educator review."
-    @pointermove="handlePointerMove"
-    @pointerleave="resetPointer"
+    aria-label="Marketing illustration featuring University of Malawi students. The photograph is contextual and does not imply a Msambizi affiliation or endorsement."
   >
-    <div class="showcase-halo" aria-hidden="true" />
-    <div class="scene-ambient" aria-hidden="true">
-      <span class="scene-orb scene-orb--one" />
-      <span class="scene-orb scene-orb--two" />
-      <span class="scene-orb scene-orb--three" />
+    <img
+      class="campaign-visual-photo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/UoM_Students.jpg/1280px-UoM_Students.jpg"
+      alt="University of Malawi students studying with computers"
+      width="1280"
+      height="855"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="campaign-visual-shade" aria-hidden="true" />
+    <div class="campaign-visual-copy" aria-hidden="true">
+      <Transition name="hero-fade" mode="out-in">
+        <div :key="active" class="carousel-slide">
+          <span class="campaign-visual-kicker">{{ slides[active].kicker }}</span>
+          <h2 v-html="slides[active].title" />
+          <span class="campaign-visual-caption">{{ slides[active].caption }}</span>
+        </div>
+      </Transition>
     </div>
-    <div class="scene-stage" aria-hidden="true">
-      <svg class="scene-flow" viewBox="0 0 520 300" fill="none">
-        <path class="flow-path" d="M90 110C170 88 235 118 265 150" />
-        <path class="flow-path flow-path--delay" d="M275 165C330 205 390 214 440 190" />
-        <path class="flow-path flow-path--return" d="M420 120C350 74 210 70 130 98" />
-        <circle cx="90" cy="110" r="4" class="flow-node" />
-        <circle cx="268" cy="158" r="5" class="flow-node flow-node--core" />
-        <circle cx="440" cy="190" r="4" class="flow-node" />
-      </svg>
-      <article class="scene-card scene-card--materials" :class="{ 'is-active': activeBeat === 0, 'is-muted': activeBeat !== 0 }">
-        <span class="scene-tag">Educators</span><strong>Approved materials</strong>
-        <p>Course notes and syllabi set clear, grounded boundaries.</p>
-      </article>
-      <article class="scene-card scene-card--student" :class="{ 'is-active': activeBeat === 1, 'is-muted': activeBeat !== 1 }">
-        <span class="scene-tag">After class</span><strong>Student question</strong>
-        <p class="scene-bubble">“Why do leaves need chlorophyll?”</p>
-      </article>
-      <article class="scene-card scene-card--support" :class="{ 'is-active': activeBeat === 2, 'is-muted': activeBeat !== 2 }">
-        <span class="scene-tag">Guided support</span><strong>Cited, step-by-step help</strong>
-        <p class="scene-answer">Guidance explains from class notes and prompts thinking.</p>
-        <div class="scene-citations"><span class="scene-cite">Cited · educator-reviewed</span></div>
-      </article>
-      <div class="scene-core" :class="`beat-${activeBeat}`">
-        <img class="brand-logo--dark" src="/brand/msambizi-logo-on-dark.webp" alt="" width="445" height="176" />
-        <img class="brand-logo--light" src="/brand/msambizi-logo-on-light.webp" alt="" width="453" height="176" />
-      </div>
-    </div>
-    <div class="scene-controls" role="group" aria-label="Emphasize a moment in the learning story">
+    <div class="campaign-carousel-dots" aria-hidden="true">
       <button
-        v-for="(beat, index) in beats"
-        :key="beat.id"
+        v-for="(s, i) in slides"
+        :key="i"
         type="button"
-        class="scene-beat"
-        :class="{ 'is-active': activeBeat === index }"
-        :aria-pressed="activeBeat === index"
-        @click="selectBeat(index)"
-      >
-        <span class="scene-beat-dot" aria-hidden="true" />
-        <span class="scene-beat-copy"><strong>{{ beat.label }}</strong></span>
-      </button>
+        class="campaign-dot"
+        :class="active === i ? 'is-active' : ''"
+        @click="active = i"
+      />
     </div>
+    <figcaption class="campaign-visual-credit">
+      University of Malawi students · Photo by Putsud, unchanged ·
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> ·
+      <a href="https://commons.wikimedia.org/wiki/File:UoM_Students.jpg" target="_blank" rel="noopener noreferrer">Source</a>.
+      Contextual image; no Msambizi affiliation or endorsement implied.
+    </figcaption>
   </figure>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-const activeBeat = ref(0)
-const beats = [
-  { id: 'materials', label: 'Set by educators' },
-  { id: 'study', label: 'After class' },
-  { id: 'support', label: 'Guided & reviewed' },
+const slides = [
+  { kicker: 'The learning journey', title: 'Ask. Learn.<br /><em>Excel.</em>', caption: 'From the lecture hall to independent study.' },
+  { kicker: 'Grounded guidance', title: 'Your course.<br /><em>Your pace.</em>', caption: 'AI support that stays inside the materials educators approve.' },
+  { kicker: 'Educator visibility', title: 'Teach.<br /><em>Track. Adjust.</em>', caption: 'See where students struggle and respond before the exam.' },
 ]
 
-function selectBeat(index: number) {
-  activeBeat.value = index
-}
+const active = ref(0)
+let timer: ReturnType<typeof setInterval> | null = null
 
-function handlePointerMove(event: PointerEvent) {
-  if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-  const element = event.currentTarget as HTMLElement
-  const bounds = element.getBoundingClientRect()
-  element.style.setProperty('--pointer-x', String(((event.clientX - bounds.left) / bounds.width - 0.5) * 2))
-  element.style.setProperty('--pointer-y', String(((event.clientY - bounds.top) / bounds.height - 0.5) * 2))
-}
+onMounted(() => {
+  timer = setInterval(() => {
+    active.value = (active.value + 1) % slides.length
+  }, 4500)
+})
 
-function resetPointer(event: PointerEvent) {
-  const element = event.currentTarget as HTMLElement
-  element.style.setProperty('--pointer-x', '0')
-  element.style.setProperty('--pointer-y', '0')
-}
+onBeforeUnmount(() => {
+  if (timer) clearInterval(timer)
+})
 </script>
+
+<style scoped>
+.carousel-slide {
+  display: grid;
+  gap: 0;
+}
+.hero-fade-enter-active,
+.hero-fade-leave-active {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.hero-fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.hero-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+.campaign-carousel-dots {
+  position: absolute;
+  right: 18px;
+  bottom: 46px;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+.campaign-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 45%);
+  background: rgb(255 255 255 / 18%);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.campaign-dot.is-active {
+  background: #f5bd77;
+  transform: scale(1.15);
+}
+</style>

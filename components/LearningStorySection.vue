@@ -1,7 +1,5 @@
 <template>
   <section id="learning-story" class="learning-story-section" tabindex="-1" aria-labelledby="story-title">
-    <div class="story-backdrop" role="img" aria-label="Students at the University of Malawi using computers during their studies" />
-    <div class="story-overlay" aria-hidden="true" />
     <div class="page-container">
       <div class="story-heading" data-reveal>
         <p class="eyebrow"><span class="eyebrow-rule" /> The learning journey</p>
@@ -27,7 +25,6 @@
           <p>{{ stage.detail }}</p>
         </article>
       </div>
-      <p class="story-photo-credit">Photo: “UoM Students.jpg” by Putsud, University of Malawi students using Computer Aid equipment, shown unchanged · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:UoM_Students.jpg" target="_blank" rel="noopener noreferrer">Source</a>. The students pictured are not presented as Msambizi customers or endorsers.</p>
     </div>
   </section>
 </template>

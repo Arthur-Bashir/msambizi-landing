@@ -25,9 +25,10 @@ Output: `.output/public` — deploy to any static host or to the domain root.
 - The public copy is adapted from Msambizi's current website for a university and college audience; school and tutor messaging is intentionally excluded.
 - The current brand palette, Inter typography, and official Msambizi wordmark variants are used throughout.
 - `/login` is an informational workspace-access placeholder; authentication is not implemented.
-- The homepage uses five sections to explain the learning journey, academic approach, institutional considerations, and presentation request path.
-- The homepage hero uses a CSS-built, explicitly illustrative laptop-and-phone concept rather than a live product screenshot; its academic conversation is neutral and contains no school-level references.
+- The homepage presents the learning journey, academic approach, institutional considerations, a free-presentation campaign banner, and the presentation request path.
+- The homepage hero uses a contextual University of Malawi student photograph and an explicitly illustrative campaign message, not a live product screenshot.
 - Presentation/contact links use the existing `support@msambizi.school` mailbox; confirm mailbox ownership and deliverability before launch.
-- The homepage uses local logo assets, original CSS/SVG illustrations, and a University of Malawi student photograph used under CC BY-SA 4.0. Attribution and source links appear in the learning-story section.
+- The homepage uses local logo assets, original CSS/SVG illustrations, and contextual student photographs with source credits and no implied institutional endorsements.
 - University of Malawi photograph: “UoM Students.jpg” by Putsud, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:UoM_Students.jpg), under the Creative Commons Attribution-Share Alike 4.0 International license.
+- Free-presentation banner photograph: Kampus Production via Pexels (https://www.pexels.com/photo/attentive-young-black-groupmates-using-laptop-while-preparing-for-exams-with-anonymous-teacher-5940713/), available under the Pexels license.
 - Privacy, terms, and security destinations are omitted until real policy pages are available.
