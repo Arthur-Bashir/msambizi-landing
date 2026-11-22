@@ -59,13 +59,13 @@ const slides = [
       'University of Malawi students · Photo by Putsud, unchanged · CC BY-SA 4.0 · Source: commons.wikimedia.org/wiki/File:UoM_Students.jpg. Contextual image; no Msambizi affiliation or endorsement implied.',
   },
   {
-    image: 'https://images.pexels.com/photos/8199136/pexels-photo-8199136.jpeg?auto=compress&cs=tinysrgb&w=1280&h=853&fit=crop&dpr=1',
-    alt: 'Students of diverse backgrounds studying together in a lecture hall',
+    image: 'https://images.pexels.com/photos/6281827/pexels-photo-6281827.jpeg?auto=compress&cs=tinysrgb&w=1280&h=853&fit=crop&dpr=1',
+    alt: 'Black students studying together with laptops and textbooks',
     kicker: 'Grounded guidance',
     title: 'Your course.<br /><em>Your pace.</em>',
     caption: 'AI support that stays inside the materials educators approve.',
     credit:
-      'Students studying together in a lecture hall · Photo by Yan Krukov / Pexels. Illustrative image; no Msambizi affiliation or endorsement implied.',
+      'Black students preparing for exams together · Photo by Gabby K / Pexels. Illustrative image; no Msambizi affiliation or endorsement implied.',
   },
 ]
 
