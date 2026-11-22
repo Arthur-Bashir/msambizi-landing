@@ -59,13 +59,13 @@ const slides = [
       'University of Malawi students · Photo by Putsud, unchanged · CC BY-SA 4.0 · Source: commons.wikimedia.org/wiki/File:UoM_Students.jpg. Contextual image; no Msambizi affiliation or endorsement implied.',
   },
   {
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Edinburgh_University_Library_Computers_%2821572874396%29.jpg/1280px-Edinburgh_University_Library_Computers_%2821572874396%29.jpg',
-    alt: 'Students using computers in Edinburgh University Library',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Universityofmalwai.jpg/1280px-Universityofmalwai.jpg',
+    alt: 'University of Malawi campus',
     kicker: 'Grounded guidance',
     title: 'Your course.<br /><em>Your pace.</em>',
     caption: 'AI support that stays inside the materials educators approve.',
     credit:
-      'Edinburgh University Library computers · Photo by Visit Edinburgh, unchanged · CC BY 2.0 · Source: commons.wikimedia.org/wiki/File:Edinburgh_University_Library_Computers_(21572874396).jpg. Contextual image; no Msambizi affiliation or endorsement implied.',
+      'University of Malawi · Photo by OER Africa (Andrew Moore), unchanged · CC BY 2.0 · Source: commons.wikimedia.org/wiki/File:Universityofmalwai.jpg. Contextual image; no Msambizi affiliation or endorsement implied.',
   },
 ]
 
