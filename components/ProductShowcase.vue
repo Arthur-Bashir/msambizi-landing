@@ -2,17 +2,20 @@
   <figure
     class="product-showcase campaign-visual"
     role="group"
-    aria-label="Marketing illustration featuring University of Malawi students. The photograph is contextual and does not imply a Msambizi affiliation or endorsement."
+    aria-label="Marketing illustration featuring students studying with computers. Contextual images do not imply a Msambizi affiliation or endorsement."
   >
-    <img
-      class="campaign-visual-photo"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/UoM_Students.jpg/1280px-UoM_Students.jpg"
-      alt="University of Malawi students studying with computers"
-      width="1280"
-      height="855"
-      fetchpriority="high"
-      decoding="async"
-    />
+    <Transition name="hero-fade" mode="out-in">
+      <img
+        :key="active"
+        class="campaign-visual-photo"
+        :src="slides[active].image"
+        :alt="slides[active].alt"
+        width="1280"
+        height="855"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </Transition>
     <div class="campaign-visual-shade" aria-hidden="true" />
     <div class="campaign-visual-copy" aria-hidden="true">
       <Transition name="hero-fade" mode="out-in">
@@ -31,14 +34,14 @@
         class="campaign-dot"
         :class="active === i ? 'is-active' : ''"
         @click="active = i"
+        :aria-label="`Show slide ${i + 1}`"
       />
     </div>
-    <figcaption class="campaign-visual-credit">
-      University of Malawi students · Photo by Putsud, unchanged ·
-      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> ·
-      <a href="https://commons.wikimedia.org/wiki/File:UoM_Students.jpg" target="_blank" rel="noopener noreferrer">Source</a>.
-      Contextual image; no Msambizi affiliation or endorsement implied.
-    </figcaption>
+    <Transition name="hero-fade" mode="out-in">
+      <figcaption :key="active" class="campaign-visual-credit">
+        {{ slides[active].credit }}
+      </figcaption>
+    </Transition>
   </figure>
 </template>
 
@@ -46,9 +49,24 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const slides = [
-  { kicker: 'The learning journey', title: 'Ask. Learn.<br /><em>Excel.</em>', caption: 'From the lecture hall to independent study.' },
-  { kicker: 'Grounded guidance', title: 'Your course.<br /><em>Your pace.</em>', caption: 'AI support that stays inside the materials educators approve.' },
-  { kicker: 'Educator visibility', title: 'Teach.<br /><em>Track. Adjust.</em>', caption: 'See where students struggle and respond before the exam.' },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/UoM_Students.jpg/1280px-UoM_Students.jpg',
+    alt: 'University of Malawi students studying with computers',
+    kicker: 'The learning journey',
+    title: 'Ask. Learn.<br /><em>Excel.</em>',
+    caption: 'From the lecture hall to independent study.',
+    credit:
+      'University of Malawi students · Photo by Putsud, unchanged · CC BY-SA 4.0 · Source: commons.wikimedia.org/wiki/File:UoM_Students.jpg. Contextual image; no Msambizi affiliation or endorsement implied.',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Edinburgh_University_Library_Computers_%2821572874396%29.jpg/1280px-Edinburgh_University_Library_Computers_%2821572874396%29.jpg',
+    alt: 'Students using computers in Edinburgh University Library',
+    kicker: 'Grounded guidance',
+    title: 'Your course.<br /><em>Your pace.</em>',
+    caption: 'AI support that stays inside the materials educators approve.',
+    credit:
+      'Edinburgh University Library computers · Photo by Visit Edinburgh, unchanged · CC BY 2.0 · Source: commons.wikimedia.org/wiki/File:Edinburgh_University_Library_Computers_(21572874396).jpg. Contextual image; no Msambizi affiliation or endorsement implied.',
+  },
 ]
 
 const active = ref(0)
@@ -57,7 +75,7 @@ let timer: ReturnType<typeof setInterval> | null = null
 onMounted(() => {
   timer = setInterval(() => {
     active.value = (active.value + 1) % slides.length
-  }, 4500)
+  }, 5000)
 })
 
 onBeforeUnmount(() => {
@@ -66,21 +84,17 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.carousel-slide {
-  display: grid;
-  gap: 0;
-}
 .hero-fade-enter-active,
 .hero-fade-leave-active {
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .hero-fade-enter-from {
   opacity: 0;
-  transform: translateY(10px);
+  transform: scale(1.02);
 }
 .hero-fade-leave-to {
   opacity: 0;
-  transform: translateY(-6px);
+  transform: scale(0.98);
 }
 .campaign-carousel-dots {
   position: absolute;
