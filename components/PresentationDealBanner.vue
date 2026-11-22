@@ -27,7 +27,7 @@
           decoding="async"
         />
         <figcaption>
-          Photo by <a href="https://www.pexels.com/photo/attentive-young-black-groupmates-using-laptop-while-preparing-for-exams-with-anonymous-teacher-5940713/" target="_blank" rel="noopener noreferrer">Kampus Production / Pexels</a> · Illustrative image; no Msambizi affiliation or endorsement implied.
+          Photo by <a href="https://www.pexels.com/photo/attentive-young-black-groupmates-using-laptop-while-preparing-for-exams-with-anonymous-teacher-5940713/" target="_blank" rel="noopener noreferrer">Kampus Production / Pexels</a>.
         </figcaption>
       </figure>
     </div>

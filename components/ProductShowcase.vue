@@ -2,7 +2,7 @@
   <figure
     class="product-showcase campaign-visual"
     role="group"
-    aria-label="Marketing illustration featuring students studying with computers. Contextual images do not imply a Msambizi affiliation or endorsement."
+    aria-label="Students studying with computers"
   >
     <Transition name="hero-fade" mode="out-in">
       <img
@@ -56,7 +56,7 @@ const slides = [
     title: 'Ask. Learn.<br /><em>Excel.</em>',
     caption: 'From the lecture hall to independent study.',
     credit:
-      'University of Malawi students · Photo by Putsud, unchanged · CC BY-SA 4.0 · Source: commons.wikimedia.org/wiki/File:UoM_Students.jpg. Contextual image; no Msambizi affiliation or endorsement implied.',
+      'University of Malawi students · Photo by Putsud, unchanged · CC BY-SA 4.0 · Source: commons.wikimedia.org/wiki/File:UoM_Students.jpg.',
   },
   {
     image: 'https://images.pexels.com/photos/6281827/pexels-photo-6281827.jpeg?auto=compress&cs=tinysrgb&w=1280&h=853&fit=crop&dpr=1',
@@ -65,7 +65,7 @@ const slides = [
     title: 'Your course.<br /><em>Your pace.</em>',
     caption: 'AI support that stays inside the materials educators approve.',
     credit:
-      'Black students preparing for exams together · Photo by Gabby K / Pexels. Illustrative image; no Msambizi affiliation or endorsement implied.',
+      'Black students preparing for exams together · Photo by Gabby K / Pexels.',
   },
 ]
 

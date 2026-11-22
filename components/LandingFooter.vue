@@ -8,7 +8,7 @@
       <p>Ask. Learn. Excel. For universities and colleges.</p>
     </div>
     <div class="page-container footer-bottom">
-      <span>© {{ year }} Msambizi · Illustrations are conceptual; no live product screens shown.</span>
+      <span>© {{ year }} Msambizi. All rights reserved.</span>
       <nav aria-label="Footer navigation">
         <a href="#learning-story">How it works</a>
         <a href="#institutional-engagement">For institutions</a>
