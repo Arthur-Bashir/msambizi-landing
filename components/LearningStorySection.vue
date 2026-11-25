@@ -34,17 +34,17 @@ const stages = [
   {
     id: 'classroom',
     title: 'Classroom teaching',
-    detail: 'Educators provide the approved notes, readings and course context that define what students learn.',
+    detail: 'Lecturers supply the notes, readings and course context that set the boundaries for support.',
   },
   {
     id: 'study',
     title: 'Independent study, after class',
-    detail: 'As students revise, AI-supported guidance draws on those same materials.',
+    detail: 'During revision, AI help draws on those same materials.',
   },
   {
     id: 'guidance',
     title: 'Educators stay in the loop',
-    detail: 'Guidance points back to course sources, while educators remain central to learning.',
+    detail: 'Answers point back to course sources, with lecturers still setting the direction.',
   },
 ]
 </script>

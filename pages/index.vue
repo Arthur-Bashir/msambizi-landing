@@ -15,48 +15,29 @@
 import { onBeforeUnmount, onMounted } from 'vue'
 
 let revealObserver: IntersectionObserver | undefined
-let revealFallbackTimer: ReturnType<typeof setTimeout> | undefined
 
 onMounted(() => {
-  const targets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
-  if (!targets.length) return
+  const targets = document.querySelectorAll<HTMLElement>('[data-reveal]')
+  if (!targets.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  if (!('IntersectionObserver' in window)) return
 
-  const showEverything = () => targets.forEach((target) => {
-    target.classList.add('is-visible')
-    target.style.removeProperty('--reveal-delay')
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return
+      entry.target.classList.add('is-visible')
+      revealObserver?.unobserve(entry.target)
+    })
   })
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-    showEverything()
-    return
-  }
-
-  try {
-    revealObserver = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue
-        entry.target.classList.add('is-visible')
-        revealObserver?.unobserve(entry.target)
-      }
-    }, { threshold: 0, rootMargin: '0px' })
-
-    targets.forEach((target, index) => {
-      target.style.setProperty('--reveal-delay', `${Math.min(index % 5, 4) * 55}ms`)
-      revealObserver?.observe(target)
-    })
-    document.documentElement.classList.add('motion-ready')
-    revealFallbackTimer = setTimeout(showEverything, 8000)
-  } catch {
-    revealObserver?.disconnect()
-    revealObserver = undefined
-    document.documentElement.classList.remove('motion-ready')
-    showEverything()
-  }
+  targets.forEach((target, index) => {
+    target.style.setProperty('--reveal-delay', `${(index % 5) * 55}ms`)
+    revealObserver?.observe(target)
+  })
+  document.documentElement.classList.add('motion-ready')
 })
 
 onBeforeUnmount(() => {
   revealObserver?.disconnect()
-  if (revealFallbackTimer) clearTimeout(revealFallbackTimer)
   document.documentElement.classList.remove('motion-ready')
 })
 </script>

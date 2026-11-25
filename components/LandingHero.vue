@@ -5,10 +5,10 @@
         <p class="eyebrow"><span class="eyebrow-rule" /> For universities and colleges</p>
         <h1>When class ends, learning still needs <em>direction.</em></h1>
         <p class="hero-intro">
-          Msambizi helps universities and colleges keep student learning connected to the course after class. AI-supported guidance draws on materials educators approve, while educators keep the academic direction.
+          Msambizi keeps after-class study tied to the course. Students work through approved materials with AI assistance, while academic direction stays with their lecturers.
         </p>
         <div class="hero-actions">
-          <a class="button-primary" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation">
+          <a class="button-primary" href="/contact">
             Request a presentation <ArrowRight :size="17" aria-hidden="true" />
           </a>
           <a class="text-link" href="#learning-story">See how it works <ArrowDown :size="16" aria-hidden="true" /></a>

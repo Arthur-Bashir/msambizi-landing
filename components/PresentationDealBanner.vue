@@ -2,14 +2,14 @@
   <section class="presentation-deal" aria-labelledby="presentation-deal-title">
     <div class="presentation-deal-inner page-container">
       <div class="presentation-deal-copy">
-        <p class="presentation-deal-eyebrow"><span aria-hidden="true">✦</span> A complimentary introduction</p>
+        <p class="presentation-deal-eyebrow"><span aria-hidden="true">✦</span> An introduction, no strings</p>
         <h2 id="presentation-deal-title">See the learning journey.<br /><em>On us.</em></h2>
         <p class="presentation-deal-description">
-          Book a free institutional presentation for your university or college. Meet the team, explore the Msambizi vision, and bring your academic context to the conversation.
+          Book a free presentation for your institution. Meet the team, walk through the learning journey, and bring your own course context to the discussion.
         </p>
         <a
           class="presentation-deal-cta"
-          href="mailto:support@msambizi.school?subject=Claim%20a%20free%20institutional%20presentation"
+          href="/contact"
         >
           Claim your free presentation
           <ArrowRight :size="18" aria-hidden="true" />

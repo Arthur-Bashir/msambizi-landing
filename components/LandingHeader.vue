@@ -24,9 +24,10 @@
         <a href="#learning-story" :aria-current="activeSection === 'learning-story' ? 'location' : undefined" @click="navigateToSection('learning-story')">How it works</a>
         <a href="#proposition" :aria-current="activeSection === 'proposition' ? 'location' : undefined" @click="navigateToSection('proposition')">Our approach</a>
         <a href="#institutional-trust" :aria-current="activeSection === 'institutional-trust' ? 'location' : undefined" @click="navigateToSection('institutional-trust')">Institutional fit</a>
+        <a href="/contact">Contact</a>
         <ThemeToggle />
         <a class="header-login-link" href="/login" @click="closeMenu()">Sign in</a>
-        <a class="button-primary header-cta" href="mailto:support@msambizi.school?subject=Request%20an%20institutional%20presentation" @click="closeMenu()">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
+        <a class="button-primary header-cta" href="/contact" @click="closeMenu()">Request a presentation <ArrowRight :size="15" aria-hidden="true" /></a>
       </nav>
     </div>
   </header>
@@ -49,11 +50,8 @@ function closeMenu(returnFocus = false) {
 }
 
 function toggleMenu() {
-  if (open.value) closeMenu()
-  else {
-    open.value = true
-    void nextTick(() => navigationElement.value?.querySelector<HTMLElement>('a, button')?.focus())
-  }
+  open.value = !open.value
+  if (open.value) void nextTick(() => navigationElement.value?.querySelector<HTMLElement>('a, button')?.focus())
 }
 
 function navigateToSection(id: string) {

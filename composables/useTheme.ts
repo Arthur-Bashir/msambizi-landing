@@ -12,7 +12,7 @@ export function useTheme() {
     try {
       window.localStorage.setItem('msambizi-theme', value)
     } catch {
-      // Keep the in-memory theme working when storage is unavailable.
+      // storage may be disabled
     }
   }
 

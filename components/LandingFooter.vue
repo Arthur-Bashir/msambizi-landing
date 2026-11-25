@@ -12,6 +12,7 @@
       <nav aria-label="Footer navigation">
         <a href="#learning-story">How it works</a>
         <a href="#institutional-engagement">For institutions</a>
+        <a href="/contact">Contact</a>
       </nav>
     </div>
   </footer>

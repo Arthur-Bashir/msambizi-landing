@@ -20,9 +20,9 @@
 
 <script setup lang="ts">
 const principles = [
-  { title: 'Course materials set the context', detail: 'Approved syllabi, notes and readings give student questions an academic frame.' },
-  { title: 'Educators set the direction', detail: 'Teaching intent and course expectations continue to guide the support students receive.' },
-  { title: 'Students work through questions', detail: 'AI-supported explanations help students explore course concepts step by step.' },
-  { title: 'Learning stays connected', detail: 'Guidance points back to course sources, keeping independent study tied to class.' },
+  { title: 'Course materials set the context', detail: 'Syllabi, notes and readings give student questions an academic frame.' },
+  { title: 'Educators set the direction', detail: 'Teaching intent and course expectations shape the help students get.' },
+  { title: 'Students work through questions', detail: 'AI explanations walk students through course concepts step by step.' },
+  { title: 'Learning stays connected', detail: 'Answers link back to course sources, so independent study stays close to class.' },
 ]
 </script>

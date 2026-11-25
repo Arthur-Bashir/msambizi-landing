@@ -3,8 +3,8 @@
     <div class="page-container">
       <div class="trust-heading" data-reveal>
         <p class="eyebrow"><span class="eyebrow-rule" /> A considered institutional decision</p>
-        <h2 id="trust-title">Explore the questions <em>that matter to your institution.</em></h2>
-        <p>A presentation is a chance to examine the academic fit, the educator’s role and the requirements that would shape any next step.</p>
+        <h2 id="trust-title">The questions <em>worth asking.</em></h2>
+        <p>A presentation is where we cover academic fit, the lecturer's role and the practical requirements before rollout is on the table.</p>
       </div>
 
       <div class="trust-grid" aria-label="Areas institutions can explore with Msambizi" data-reveal>
@@ -20,8 +20,8 @@
 
 <script setup lang="ts">
 const considerations = [
-  { title: 'Academic alignment', detail: 'Discuss how approved course materials and academic expectations shape the learning context.' },
-  { title: 'Educator involvement', detail: 'Explore how educators guide the experience and remain central to the learning relationship.' },
-  { title: 'Institutional requirements', detail: 'Raise questions about scope, privacy and security early, before considering any adoption.' },
+  { title: 'Academic alignment', detail: 'How course materials and academic expectations shape the learning context.' },
+  { title: 'Educator involvement', detail: 'Where lecturers sit in the experience and how they keep the academic direction.' },
+  { title: 'Institutional requirements', detail: 'Scope, privacy and security questions, raised before adoption is on the table.' },
 ]
 </script>

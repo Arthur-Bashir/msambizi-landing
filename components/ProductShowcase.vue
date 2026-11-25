@@ -1,9 +1,5 @@
 <template>
-  <figure
-    class="product-showcase campaign-visual"
-    role="group"
-    aria-label="Students studying with computers"
-  >
+  <figure class="product-showcase campaign-visual" role="group" aria-label="Students studying with computers">
     <Transition name="hero-fade" mode="out-in">
       <img
         :key="active"
@@ -21,20 +17,21 @@
       <Transition name="hero-fade" mode="out-in">
         <div :key="active" class="carousel-slide">
           <span class="campaign-visual-kicker">{{ slides[active].kicker }}</span>
-          <h2 v-html="slides[active].title" />
+          <h2>{{ slides[active].title }}<br /><em>{{ slides[active].highlight }}</em></h2>
           <span class="campaign-visual-caption">{{ slides[active].caption }}</span>
         </div>
       </Transition>
     </div>
-    <div class="campaign-carousel-dots" aria-hidden="true">
+    <div class="campaign-carousel-dots" role="group" aria-label="Choose slide">
       <button
-        v-for="(s, i) in slides"
+        v-for="(slide, i) in slides"
         :key="i"
         type="button"
         class="campaign-dot"
         :class="active === i ? 'is-active' : ''"
-        @click="active = i"
         :aria-label="`Show slide ${i + 1}`"
+        :aria-current="active === i ? 'true' : undefined"
+        @click="active = i"
       />
     </div>
     <Transition name="hero-fade" mode="out-in">
@@ -53,24 +50,24 @@ const slides = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/UoM_Students.jpg/1280px-UoM_Students.jpg',
     alt: 'University of Malawi students studying with computers',
     kicker: 'The learning journey',
-    title: 'Ask. Learn.<br /><em>Excel.</em>',
+    title: 'Ask. Learn.',
+    highlight: 'Excel.',
     caption: 'From the lecture hall to independent study.',
-    credit:
-      'University of Malawi students · Photo by Putsud, unchanged · CC BY-SA 4.0 · Source: commons.wikimedia.org/wiki/File:UoM_Students.jpg.',
+    credit: 'University of Malawi students · Photo by Putsud, unchanged · CC BY-SA 4.0 · Source: commons.wikimedia.org/wiki/File:UoM_Students.jpg.',
   },
   {
     image: 'https://images.pexels.com/photos/6281827/pexels-photo-6281827.jpeg?auto=compress&cs=tinysrgb&w=1280&h=853&fit=crop&dpr=1',
     alt: 'Black students studying together with laptops and textbooks',
     kicker: 'Grounded guidance',
-    title: 'Your course.<br /><em>Your pace.</em>',
-    caption: 'AI support that stays inside the materials educators approve.',
-    credit:
-      'Black students preparing for exams together · Photo by Gabby K / Pexels.',
+    title: 'Your course.',
+    highlight: 'Your pace.',
+    caption: 'Help that stays within the materials educators approve.',
+    credit: 'Black students preparing for exams together · Photo by Gabby K / Pexels.',
   },
 ]
 
 const active = ref(0)
-let timer: ReturnType<typeof setInterval> | null = null
+let timer: ReturnType<typeof setInterval> | undefined
 
 onMounted(() => {
   timer = setInterval(() => {
@@ -98,17 +95,17 @@ onBeforeUnmount(() => {
 }
 .campaign-carousel-dots {
   position: absolute;
+  z-index: 3;
   right: 18px;
   bottom: 46px;
   display: flex;
   gap: 8px;
-  z-index: 3;
 }
 .campaign-dot {
   width: 8px;
   height: 8px;
-  border-radius: 999px;
   border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 999px;
   background: rgb(255 255 255 / 18%);
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
